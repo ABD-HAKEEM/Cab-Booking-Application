@@ -1,0 +1,1 @@
+﻿Data Source=Abdul-hakeem;Initial Catalog=Cab;User ID=sa;Password=Hadhik&2010
