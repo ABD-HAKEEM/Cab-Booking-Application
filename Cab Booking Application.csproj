@@ -78,6 +78,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin.cs" />
     <Compile Include="car.cs" />
     <Compile Include="Car_Vehi.cs" />
     <Compile Include="Costing.cs">

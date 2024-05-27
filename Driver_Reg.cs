@@ -31,70 +31,32 @@ namespace Cab_Booking_Application
                 MessageBox.Show("Passwords do not match.");
                 return;
             }
-            {
 
 
-                // SQL query to insert data into the Customer table
-                string insertdata = "INSERT INTO Drivers (RegNo, F_Name, L_Name, Email, DOB, gender, typ, id_no, address,telNo) VALUES (@regtxt, @Firstname, @Lastname, @emailtxt, @Dob, @genderbox, @Typ, @idtxt, @Addtxt,@telNumber)";
-                string insertusr = "INSERT INTO user_mas (Users, password, Pw_2, RegNo,grp,Status) VALUES (@usrnam, @pass, @pass2, @regtxt,@typ,0)";
 
-                // Create SqlCommand objects with the insert queries and the existing connection
-                using (SqlCommand command1 = new SqlCommand(insertdata, conn))
-                using (SqlCommand command2 = new SqlCommand(insertusr, conn))
-                {
-                    try
+            Admin.Admin_Driver admin = new Admin.Admin_Driver(
+                  regNum: regtxt.Text,
+                  firstName: Firstname.Text,
+                  lastName: Lastname.Text,
+                  email: emailtxt.Text,
+                  dOB: dob.Text,
+                  gender: genderbox.SelectedItem?.ToString(),
+                  type: Typ.Text,
+                  iDNumber: idtxt.Text,
+                  address: Addtxt.Text,
+                  telNumber: Teltxt.Text.ToString()=="1",
+                  username: usrnam.Text,
+                  password: pass.Text
+                  
+                    );
 
-                    {
-                        // Add parameters to the first command (insertdata)
-                        command1.Parameters.AddWithValue("@regtxt", regtxt.Text);
-                        command1.Parameters.AddWithValue("@Firstname", Firstname.Text);
-                        command1.Parameters.AddWithValue("@Lastname", Lastname.Text);
-                        command1.Parameters.AddWithValue("@emailtxt", emailtxt.Text);
-                        if (genderbox.SelectedItem != null)
-                        {
-                            command1.Parameters.AddWithValue("@genderbox", genderbox.SelectedItem.ToString());
-                        }
-                        command1.Parameters.AddWithValue("@Dob", dob.Text);
-                        if (Typ.SelectedItem != null)
-                        {
-                            command1.Parameters.AddWithValue("@Typ", Typ.SelectedItem.ToString());
-                        }
-                        command1.Parameters.AddWithValue("@idtxt", idtxt.Text);
-                        command1.Parameters.AddWithValue("@Addtxt", Addtxt.Text);
-                        command1.Parameters.AddWithValue("@telNumber" , Teltxt.Text);
-
-                        // Add parameters to the second command (insertusr)
-                        command2.Parameters.AddWithValue("@usrnam", usrnam.Text);
-                        command2.Parameters.AddWithValue("@pass", pass.Text);
-                        command2.Parameters.AddWithValue("@pass2", pass2.Text);
-                        command2.Parameters.AddWithValue("@regtxt", regtxt.Text);
-                        if (Typ.SelectedItem != null)
-                        {
-                            command2.Parameters.AddWithValue("@Typ", Typ.SelectedItem.ToString());
-                        }
+            admin.InsertDriver();
+            MessageBox.Show("Driver data inserted successfully.");
 
 
-                        // Execute the commands
-                        int rowsAffected1 = command1.ExecuteNonQuery();
-                        int rowsAffected2 = command2.ExecuteNonQuery();
 
-                        if (rowsAffected1 > 0 && rowsAffected2 > 0)
-                        {
-                            MessageBox.Show("Data inserted successfully!");
-                            Clrbtn_Click(this, EventArgs.Empty);
-                            this.Close();
-                        }
-                        else
-                        {
-                            MessageBox.Show("No rows affected. Data not inserted.");
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error: " + ex.Message);
-                    }
-                }
-            }
+
+
         }
 
         private void Driver_Reg_Load(object sender, EventArgs e)
@@ -109,6 +71,8 @@ namespace Cab_Booking_Application
             generatedNumbers.Add(number);
             regtxt.Text = number.ToString();
 
+            Typ.Text = "DRIVER";
+            Typ.ReadOnly = true;
 
             conn = DBconnection.ConnectToDB();
 

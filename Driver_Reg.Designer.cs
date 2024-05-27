@@ -38,7 +38,6 @@
             this.Addtxt = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.Typ = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.emailtxt = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -60,6 +59,7 @@
             this.Clsbtn = new System.Windows.Forms.Button();
             this.Clrbtn = new System.Windows.Forms.Button();
             this.Savebtn = new System.Windows.Forms.Button();
+            this.Typ = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -67,6 +67,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.Typ);
             this.groupBox1.Controls.Add(this.Regbox);
             this.groupBox1.Controls.Add(this.Teltxt);
             this.groupBox1.Controls.Add(this.label12);
@@ -76,7 +77,6 @@
             this.groupBox1.Controls.Add(this.Addtxt);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.Typ);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.emailtxt);
             this.groupBox1.Controls.Add(this.label5);
@@ -176,17 +176,6 @@
             this.label7.Size = new System.Drawing.Size(60, 25);
             this.label7.TabIndex = 16;
             this.label7.Text = "Type";
-            // 
-            // Typ
-            // 
-            this.Typ.FormattingEnabled = true;
-            this.Typ.Items.AddRange(new object[] {
-            "DRIVER",
-            "CUSTOMER"});
-            this.Typ.Location = new System.Drawing.Point(163, 329);
-            this.Typ.Name = "Typ";
-            this.Typ.Size = new System.Drawing.Size(464, 33);
-            this.Typ.TabIndex = 15;
             // 
             // label6
             // 
@@ -377,6 +366,13 @@
             this.Savebtn.UseVisualStyleBackColor = false;
             this.Savebtn.Click += new System.EventHandler(this.Savebtn_Click);
             // 
+            // Typ
+            // 
+            this.Typ.Location = new System.Drawing.Point(163, 337);
+            this.Typ.Name = "Typ";
+            this.Typ.Size = new System.Drawing.Size(464, 31);
+            this.Typ.TabIndex = 28;
+            // 
             // driver_reg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -406,7 +402,6 @@
         private System.Windows.Forms.TextBox Addtxt;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox Typ;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox emailtxt;
         private System.Windows.Forms.Label label5;
@@ -431,5 +426,6 @@
         private System.Windows.Forms.Button Clrbtn;
         private System.Windows.Forms.Button Savebtn;
         private System.Windows.Forms.ComboBox Regbox;
+        private System.Windows.Forms.TextBox Typ;
     }
 }
