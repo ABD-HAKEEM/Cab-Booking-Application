@@ -87,5 +87,11 @@ namespace Cab_Booking_Application
                 }
             }
         }
+
+
+        public class Admin_Customer
+        {
+
+        }
     }
 }

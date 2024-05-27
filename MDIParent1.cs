@@ -17,7 +17,7 @@ namespace Cab_Booking_Application
 
             // instance = this;
             InitializeComponent();
-            this.Load += MDIParent1_Load;
+
         }
 
         private void ShowNewForm(object sender, EventArgs e)
@@ -137,48 +137,35 @@ namespace Cab_Booking_Application
                 {
                     while (readerpass.Read())
                     {
-                        string Controals = readerpass["control"].ToString();
-                        string statustype = readerpass["status"].ToString();
-                        string[] allowedControls = Controals.Split(',');
+                        string controlName = readerpass["control"].ToString();
+                        bool statusType = Convert.ToBoolean(readerpass["status"]);
 
-                        foreach (ToolStripMenuItem menuItem in MainMenuStrip.Items)
+                        // Find the menu item by its name
+                        ToolStripMenuItem menuItem = (ToolStripMenuItem)MainMenuStrip.Items.Find(controlName, true).FirstOrDefault();
+
+                        if (menuItem != null)
                         {
-                            // Adjust comparison to match the full name correctly
-                            string menuItemName = menuItem.Name + "ToolStripMenuItem";
-                            if (allowedControls.Contains(menuItemName))
-                            {
-                                menuItem.Visible = (statustype == "True");
-                                ToggleSubMenuVisibility(menuItem, allowedControls, statustype);
-                            }
+                            // Set the visibility of the menu item
+                            menuItem.Visible = statusType;
                         }
+                        
                     }
                 }
             }
         }
 
-        private void ToggleSubMenuVisibility(ToolStripMenuItem menuItem, string[] allowedControls, string statustype)
-        {
-            foreach (ToolStripItem subMenuItem in menuItem.DropDownItems)
-            {
-                if (subMenuItem is ToolStripMenuItem subMenu)
-                {
-                    // Adjust comparison to match the full name correctly
-                    string subMenuItemName = subMenu.Name + "ToolStripMenuItem";
-                    if (allowedControls.Contains(subMenuItemName))
-                    {
-                        subMenu.Visible = (statustype == "True");
-                        ToggleSubMenuVisibility(subMenu, allowedControls, statustype);
-                    }
-                }
-            }
-        }
+
+
+
+
+
 
         private void MDIParent1_Load(object sender, EventArgs e)
         {
             conn = DBconnection.ConnectToDB();
             logs.Text = Username;
 
-            // UpdateMenuItemsVisibility();
+             
 
             string grp_query = "SELECT grp FROM user_mas WHERE Users = @logs";
 
@@ -198,6 +185,7 @@ namespace Cab_Booking_Application
                 }
 
             }
+            UpdateMenuItemsVisibility();
         }
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -303,6 +291,13 @@ namespace Cab_Booking_Application
         private void driverRegistrationToolStripMenuItem_Click(object sender, EventArgs e)
         {
             driver_reg f1 = new driver_reg();
+            f1.MdiParent = this;
+            f1.Show();
+        }
+
+        private void cabBookingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Cabbooking f1 = new Cabbooking();
             f1.MdiParent = this;
             f1.Show();
         }

@@ -31,9 +31,9 @@ namespace Cab_Booking_Application
         private void AddMenuItemToCheckedListBox(ToolStripMenuItem menuItem)
         {
             // Check if the item is already in the CheckedListBox
-            if (!checkedListBox1.Items.Contains(menuItem.Text))
+            if (!checkedListBox1.Items.Contains(menuItem.Name))
             {
-                checkedListBox1.Items.Add(menuItem.Text);
+                checkedListBox1.Items.Add(menuItem.Name);
 
                 foreach (object item in menuItem.DropDownItems)
                 {
@@ -44,6 +44,7 @@ namespace Cab_Booking_Application
                 }
             }
         }
+
         private void User_group_Load(object sender, EventArgs e)
         {
             PopulateCheckedListBox();
@@ -89,7 +90,9 @@ namespace Cab_Booking_Application
                         {
                             command.Parameters.AddWithValue("@type", comboBox1.SelectedItem?.ToString());
                             command.ExecuteNonQuery();
+                           
                         }
+                        unsele_Click(this, EventArgs.Empty);
                     }
                 }
             }

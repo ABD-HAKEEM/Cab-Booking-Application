@@ -32,6 +32,7 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.locationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.driverRegistrationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.carsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.costingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,7 +61,6 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.logs = new System.Windows.Forms.ToolStripStatusLabel();
             this.logs2 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.driverRegistrationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -104,6 +104,14 @@
             this.customerToolStripMenuItem.Text = "Customer Registration";
             this.customerToolStripMenuItem.Click += new System.EventHandler(this.customerToolStripMenuItem_Click);
             // 
+            // driverRegistrationToolStripMenuItem
+            // 
+            this.driverRegistrationToolStripMenuItem.Image = global::Cab_Booking_Application.Properties.Resources.steering_wheel;
+            this.driverRegistrationToolStripMenuItem.Name = "driverRegistrationToolStripMenuItem";
+            this.driverRegistrationToolStripMenuItem.Size = new System.Drawing.Size(457, 44);
+            this.driverRegistrationToolStripMenuItem.Text = "Driver Registration  ";
+            this.driverRegistrationToolStripMenuItem.Click += new System.EventHandler(this.driverRegistrationToolStripMenuItem_Click);
+            // 
             // carsToolStripMenuItem
             // 
             this.carsToolStripMenuItem.Image = global::Cab_Booking_Application.Properties.Resources.cars;
@@ -144,6 +152,7 @@
             this.cabBookingToolStripMenuItem.Name = "cabBookingToolStripMenuItem";
             this.cabBookingToolStripMenuItem.Size = new System.Drawing.Size(391, 44);
             this.cabBookingToolStripMenuItem.Text = "Cab Booking";
+            this.cabBookingToolStripMenuItem.Click += new System.EventHandler(this.cabBookingToolStripMenuItem_Click);
             // 
             // vehicalAvilabilityToolStripMenuItem
             // 
@@ -330,14 +339,6 @@
             // 
             this.logs2.Name = "logs2";
             this.logs2.Size = new System.Drawing.Size(0, 32);
-            // 
-            // driverRegistrationToolStripMenuItem
-            // 
-            this.driverRegistrationToolStripMenuItem.Image = global::Cab_Booking_Application.Properties.Resources.steering_wheel;
-            this.driverRegistrationToolStripMenuItem.Name = "driverRegistrationToolStripMenuItem";
-            this.driverRegistrationToolStripMenuItem.Size = new System.Drawing.Size(457, 44);
-            this.driverRegistrationToolStripMenuItem.Text = "Driver Registration  ";
-            this.driverRegistrationToolStripMenuItem.Click += new System.EventHandler(this.driverRegistrationToolStripMenuItem_Click);
             // 
             // MDIParent1
             // 

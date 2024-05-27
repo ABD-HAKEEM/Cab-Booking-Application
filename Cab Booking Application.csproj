@@ -133,6 +133,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Cabbooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cabbooking.Designer.cs">
+      <DependentUpon>Cabbooking.cs</DependentUpon>
+    </Compile>
     <Compile Include="User_group.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +179,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Cabbooking.resx">
+      <DependentUpon>Cabbooking.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User_group.resx">
       <DependentUpon>User_group.cs</DependentUpon>
     </EmbeddedResource>
@@ -204,6 +213,13 @@
     <None Include="Resources\steering-wheel.png" />
     <None Include="Resources\marker.png" />
     <Content Include="5452472_automobile_cab_car_taxi_transportation_icon.ico" />
+    <None Include="Resources\abstract-template-grey-geometric-shine-and-layer-background-with-light-blue-effect-technology-style-free-vector.jpg" />
+    <None Include="Resources\th.jpeg" />
+    <None Include="Resources\181071.jpg" />
+    <None Include="Resources\13781051.jpg" />
+    <None Include="Resources\958461.jpg" />
+    <None Include="Resources\th1.jpeg" />
+    <None Include="Resources\1810711.jpg" />
     <Content Include="Server_Path.txt" />
   </ItemGroup>
   <ItemGroup>
