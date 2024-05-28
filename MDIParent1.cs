@@ -11,6 +11,7 @@ namespace Cab_Booking_Application
         SqlConnection conn;
         private int childFormNumber = 0;
         public string Username { get; set; }
+        public string RegNum { get; set; }
 
         public MDIParent1()
         {
@@ -164,8 +165,9 @@ namespace Cab_Booking_Application
         {
             conn = DBconnection.ConnectToDB();
             logs.Text = Username;
+            Regno.Text = RegNum;
 
-             
+
 
             string grp_query = "SELECT grp FROM user_mas WHERE Users = @logs";
 
@@ -298,8 +300,15 @@ namespace Cab_Booking_Application
         private void cabBookingToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Cabbooking f1 = new Cabbooking();
+            f1.Username_log = logs.Text;
+            f1.RegNum = Regno.Text;
             f1.MdiParent = this;
             f1.Show();
+        }
+
+        private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }

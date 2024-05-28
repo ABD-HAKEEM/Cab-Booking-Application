@@ -113,6 +113,7 @@
     <Compile Include="location.Designer.cs">
       <DependentUpon>location.cs</DependentUpon>
     </Compile>
+    <Compile Include="order.cs" />
     <Compile Include="RegForm.cs">
       <SubType>Form</SubType>
     </Compile>

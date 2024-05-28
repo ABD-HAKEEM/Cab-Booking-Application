@@ -61,6 +61,7 @@ namespace Cab_Booking_Application
 
                 {
                     string password = (string)command.ExecuteScalar();
+                   
 
                     if (password == enteredPassword)
                     {
@@ -69,9 +70,10 @@ namespace Cab_Booking_Application
 
                         // Create an instance of MDIParent1 form
                         MDIParent1 childForm = new MDIParent1();
-
+                        
                         // Set the Username property
                         childForm.Username = UserName.Text;
+                        childForm.RegNum = label2.Text;
                         this.Hide();
                         childForm.Show();
                     }

@@ -55,9 +55,11 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.cusName = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.custname = new System.Windows.Forms.TextBox();
+            this.custId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.locto = new System.Windows.Forms.ComboBox();
             this.locstar = new System.Windows.Forms.ComboBox();
@@ -84,6 +86,7 @@
             this.check = new System.Windows.Forms.Button();
             this.savebut = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.Withdrv = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox10.SuspendLayout();
             this.groupBox9.SuspendLayout();
@@ -106,7 +109,7 @@
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Location = new System.Drawing.Point(21, 33);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1659, 930);
+            this.groupBox1.Size = new System.Drawing.Size(1659, 947);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
@@ -117,7 +120,7 @@
             this.groupBox10.Controls.Add(this.label15);
             this.groupBox10.Location = new System.Drawing.Point(652, 481);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(973, 401);
+            this.groupBox10.Size = new System.Drawing.Size(973, 443);
             this.groupBox10.TabIndex = 6;
             this.groupBox10.TabStop = false;
             // 
@@ -264,6 +267,7 @@
             this.Vehbox.Name = "Vehbox";
             this.Vehbox.Size = new System.Drawing.Size(334, 40);
             this.Vehbox.TabIndex = 0;
+            this.Vehbox.SelectedIndexChanged += new System.EventHandler(this.Vehbox_SelectedIndexChanged);
             // 
             // groupBox8
             // 
@@ -327,7 +331,7 @@
             // 
             this.groupBox6.Controls.Add(this.cusName);
             this.groupBox6.Controls.Add(this.label16);
-            this.groupBox6.Controls.Add(this.custname);
+            this.groupBox6.Controls.Add(this.custId);
             this.groupBox6.Controls.Add(this.label1);
             this.groupBox6.Location = new System.Drawing.Point(33, 41);
             this.groupBox6.Name = "groupBox6";
@@ -354,13 +358,13 @@
             this.label16.TabIndex = 3;
             this.label16.Text = "Customer Name";
             // 
-            // custname
+            // custId
             // 
-            this.custname.Font = new System.Drawing.Font("Cambria", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.custname.Location = new System.Drawing.Point(215, 45);
-            this.custname.Name = "custname";
-            this.custname.Size = new System.Drawing.Size(344, 39);
-            this.custname.TabIndex = 1;
+            this.custId.Font = new System.Drawing.Font("Cambria", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.custId.Location = new System.Drawing.Point(215, 45);
+            this.custId.Name = "custId";
+            this.custId.Size = new System.Drawing.Size(344, 39);
+            this.custId.TabIndex = 1;
             // 
             // label1
             // 
@@ -374,16 +378,42 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.Withdrv);
+            this.groupBox3.Controls.Add(this.button1);
+            this.groupBox3.Controls.Add(this.label17);
             this.groupBox3.Controls.Add(this.groupBox7);
             this.groupBox3.Controls.Add(this.groupBox5);
             this.groupBox3.Controls.Add(this.groupBox4);
             this.groupBox3.Font = new System.Drawing.Font("Cambria", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(37, 238);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(579, 644);
+            this.groupBox3.Size = new System.Drawing.Size(579, 686);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Booking Field";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(20, 508);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(539, 44);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Check Vehicle Availability ";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label17.Location = new System.Drawing.Point(13, 574);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(157, 37);
+            this.label17.TabIndex = 3;
+            this.label17.Text = "rymdturs";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label17.Click += new System.EventHandler(this.label17_Click);
             // 
             // groupBox7
             // 
@@ -391,7 +421,7 @@
             this.groupBox7.Controls.Add(this.locstar);
             this.groupBox7.Controls.Add(this.label6);
             this.groupBox7.Controls.Add(this.label7);
-            this.groupBox7.Location = new System.Drawing.Point(20, 428);
+            this.groupBox7.Location = new System.Drawing.Point(20, 328);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(535, 161);
             this.groupBox7.TabIndex = 2;
@@ -440,7 +470,7 @@
             this.groupBox5.Controls.Add(this.Timestart);
             this.groupBox5.Controls.Add(this.label4);
             this.groupBox5.Controls.Add(this.label5);
-            this.groupBox5.Location = new System.Drawing.Point(20, 231);
+            this.groupBox5.Location = new System.Drawing.Point(20, 183);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(535, 139);
             this.groupBox5.TabIndex = 1;
@@ -505,7 +535,7 @@
             this.groupBox4.Controls.Add(this.dat1);
             this.groupBox4.Controls.Add(this.label3);
             this.groupBox4.Controls.Add(this.label2);
-            this.groupBox4.Location = new System.Drawing.Point(20, 50);
+            this.groupBox4.Location = new System.Drawing.Point(20, 38);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(535, 139);
             this.groupBox4.TabIndex = 0;
@@ -569,7 +599,7 @@
             this.groupBox2.Controls.Add(this.savebut);
             this.groupBox2.Location = new System.Drawing.Point(19, 986);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1660, 125);
+            this.groupBox2.Size = new System.Drawing.Size(1660, 129);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
@@ -600,6 +630,7 @@
             this.Clrbut.TabIndex = 2;
             this.Clrbut.Text = "Clear";
             this.Clrbut.UseVisualStyleBackColor = true;
+            this.Clrbut.Click += new System.EventHandler(this.Clrbut_Click);
             // 
             // check
             // 
@@ -618,6 +649,16 @@
             this.savebut.TabIndex = 0;
             this.savebut.Text = "Book";
             this.savebut.UseVisualStyleBackColor = true;
+            // 
+            // Withdrv
+            // 
+            this.Withdrv.AutoSize = true;
+            this.Withdrv.Location = new System.Drawing.Point(30, 627);
+            this.Withdrv.Name = "Withdrv";
+            this.Withdrv.Size = new System.Drawing.Size(249, 36);
+            this.Withdrv.TabIndex = 5;
+            this.Withdrv.Text = "Want With Driver";
+            this.Withdrv.UseVisualStyleBackColor = true;
             // 
             // Cabbooking
             // 
@@ -646,6 +687,7 @@
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             this.groupBox5.ResumeLayout(false);
@@ -660,7 +702,7 @@
         #endregion
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox custname;
+        private System.Windows.Forms.TextBox custId;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox5;
@@ -712,5 +754,8 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox Fuel;
         private System.Windows.Forms.TextBox Type;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.CheckBox Withdrv;
     }
 }

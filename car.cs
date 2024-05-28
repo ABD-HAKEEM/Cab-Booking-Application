@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 
 namespace Cab_Booking_Application
@@ -33,6 +34,7 @@ namespace Cab_Booking_Application
         public string E_Start { get; set; }
         public string E_End { get; set; }
         public string Image { get; set; }
+        
 
         // Constructor
         public Car(string carName, string serial, string registration, string engine, string grade, string mileage, string fuel, string type, string brand, string model, string color, string transmission, string seat, string options, string remarks, string driverId, int withDriver, int active, string lStart, string lEnd, string iStart, string iEnd, string eStart, string eEnd, string image)
@@ -123,4 +125,64 @@ namespace Cab_Booking_Application
             return cars;
         }
     }
+
+  /*  public class CarAvl
+    {
+        SqlConnection conn;
+
+        // Properties
+        public string Start_date { get; set; }
+        public string End_date { get; set; }
+        public string Car_id { get; set; }
+        public string Status { get; set; }
+
+        // Constructor
+        public CarAvl(string start_date, string end_date, string car_id)
+        {
+            Start_date = start_date;
+            End_date = end_date;
+            Car_id = car_id;
+
+            // Establish database connection
+            conn = DBconnection.ConnectToDB();
+        }
+
+        // Method to get car availability
+        public static List<CarAvl> GetCarsAvailability(string startDate, string endDate, SqlConnection conn)
+        {
+            List<CarAvl> availableCars = new List<CarAvl>();
+
+            string query = @"SELECT VehNo FROM Vehicalmas WHERE VehNo NOT IN (SELECT DISTINCT VehID FROM Cab_booking WHERE Cab_booking.Start_date <= @EndDate AND Cab_booking.end_date >= @StartDate)";
+
+            using (SqlCommand command = new SqlCommand(query, conn))
+            {
+                command.Parameters.AddWithValue("@StartDate", startDate);
+                command.Parameters.AddWithValue("@EndDate", endDate);
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        CarAvl carAvl = new CarAvl(
+                            start_date: startDate,
+                            end_date: endDate,
+                            car_id: reader["VehNo"].ToString() 
+                        )
+                        {
+                            //Status = reader["Status"].ToString()
+                        };
+
+                        
+                    }
+                }
+            }
+
+            return availableCars;
+        }
+
+    }
+*/
+
+
+
 }

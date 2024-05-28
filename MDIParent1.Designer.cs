@@ -61,6 +61,7 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.logs = new System.Windows.Forms.ToolStripStatusLabel();
             this.logs2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.Regno = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -77,7 +78,7 @@
             this.exitToolStripMenuItem});
             this.fileMenu.ImageTransparentColor = System.Drawing.SystemColors.ActiveBorder;
             this.fileMenu.Name = "fileMenu";
-            this.fileMenu.Size = new System.Drawing.Size(79, 38);
+            this.fileMenu.Size = new System.Drawing.Size(79, 36);
             this.fileMenu.Text = "&File";
             this.fileMenu.Click += new System.EventHandler(this.fileMenu_Click);
             // 
@@ -144,7 +145,7 @@
             this.cabBookingToolStripMenuItem,
             this.vehicalAvilabilityToolStripMenuItem});
             this.transuctionsToolStripMenuItem.Name = "transuctionsToolStripMenuItem";
-            this.transuctionsToolStripMenuItem.Size = new System.Drawing.Size(198, 38);
+            this.transuctionsToolStripMenuItem.Size = new System.Drawing.Size(198, 36);
             this.transuctionsToolStripMenuItem.Text = "&Transactions ";
             // 
             // cabBookingToolStripMenuItem
@@ -170,7 +171,7 @@
             this.driverToolStripMenuItem1,
             this.vehicalToolStripMenuItem});
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
-            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(131, 38);
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(131, 36);
             this.reportsToolStripMenuItem.Text = "&Reports";
             // 
             // transuctionToolStripMenuItem
@@ -215,7 +216,7 @@
             this.changeTextToolStripMenuItem,
             this.changeFormsColorToolStripMenuItem});
             this.windowsMenu.Name = "windowsMenu";
-            this.windowsMenu.Size = new System.Drawing.Size(148, 38);
+            this.windowsMenu.Size = new System.Drawing.Size(148, 36);
             this.windowsMenu.Text = "&Windows";
             // 
             // newWindowToolStripMenuItem
@@ -281,7 +282,7 @@
             this.userAccountToolStripMenuItem,
             this.changePasswordToolStripMenuItem});
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(132, 38);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(132, 36);
             this.settingsToolStripMenuItem.Text = "Settings";
             // 
             // userAccountToolStripMenuItem
@@ -313,7 +314,7 @@
             this.menuStrip.MdiWindowListItem = this.windowsMenu;
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Padding = new System.Windows.Forms.Padding(16, 5, 0, 5);
-            this.menuStrip.Size = new System.Drawing.Size(1686, 48);
+            this.menuStrip.Size = new System.Drawing.Size(1686, 46);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "MenuStrip";
             // 
@@ -322,12 +323,14 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.logs,
-            this.logs2});
+            this.logs2,
+            this.Regno});
             this.statusStrip1.Location = new System.Drawing.Point(0, 1073);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1686, 42);
             this.statusStrip1.TabIndex = 4;
             this.statusStrip1.Text = "statusStrip1";
+            this.statusStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.statusStrip1_ItemClicked);
             // 
             // logs
             // 
@@ -339,6 +342,12 @@
             // 
             this.logs2.Name = "logs2";
             this.logs2.Size = new System.Drawing.Size(0, 32);
+            // 
+            // Regno
+            // 
+            this.Regno.Name = "Regno";
+            this.Regno.Size = new System.Drawing.Size(237, 32);
+            this.Regno.Text = "toolStripStatusLabel1";
             // 
             // MDIParent1
             // 
@@ -401,6 +410,7 @@
         private System.Windows.Forms.ToolStripMenuItem changeFormsColorToolStripMenuItem;
         private System.Windows.Forms.ToolStripStatusLabel logs2;
         private System.Windows.Forms.ToolStripMenuItem driverRegistrationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripStatusLabel Regno;
     }
 }
 
