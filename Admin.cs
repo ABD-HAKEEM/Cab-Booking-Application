@@ -46,8 +46,8 @@ namespace Cab_Booking_Application
                 {
                     using (SqlConnection conn = DBconnection.ConnectToDB())
                     {
-                        string query = "INSERT INTO Drivers (RegNo, F_Name, L_Name, Email, gender, DOB, typ, id_no, telNo, address, Username) " +
-                                       "VALUES (@RegNum, @FirstName, @LastName, @Email, @Gender, @DOB, @Type, @IDNumber, @TelNumber, @Address, @Username)";
+                        string query = "INSERT INTO Drivers (RegNo, F_Name, L_Name, Email, gender, DOB, typ, id_no, telNo, address, Username,ststus) " +
+                                       "VALUES (@RegNum, @FirstName, @LastName, @Email, @Gender, @DOB, @Type, @IDNumber, @TelNumber, @Address, @Username,'0')";
 
                         string insertusr = "INSERT INTO user_mas " +
                             "(Users, password, Pw_2, RegNo, grp, Status) VALUES (@Username, @Password, @Password2, @RegNum, @Type, 0)";

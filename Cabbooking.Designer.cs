@@ -58,6 +58,7 @@
             this.custId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.Withdrv = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
@@ -86,7 +87,6 @@
             this.check = new System.Windows.Forms.Button();
             this.savebut = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.Withdrv = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox10.SuspendLayout();
             this.groupBox9.SuspendLayout();
@@ -126,17 +126,16 @@
             // 
             // cost
             // 
-            this.cost.AutoSize = true;
             this.cost.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.cost.Font = new System.Drawing.Font("Times New Roman", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cost.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cost.ForeColor = System.Drawing.Color.SeaShell;
-            this.cost.Location = new System.Drawing.Point(529, 149);
+            this.cost.Location = new System.Drawing.Point(368, 301);
             this.cost.Name = "cost";
             this.cost.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cost.Size = new System.Drawing.Size(414, 219);
+            this.cost.Size = new System.Drawing.Size(582, 119);
             this.cost.TabIndex = 1;
             this.cost.Text = "cost";
-            this.cost.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.cost.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label15
             // 
@@ -392,6 +391,16 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Booking Field";
             // 
+            // Withdrv
+            // 
+            this.Withdrv.AutoSize = true;
+            this.Withdrv.Location = new System.Drawing.Point(30, 627);
+            this.Withdrv.Name = "Withdrv";
+            this.Withdrv.Size = new System.Drawing.Size(249, 36);
+            this.Withdrv.TabIndex = 5;
+            this.Withdrv.Text = "Want With Driver";
+            this.Withdrv.UseVisualStyleBackColor = true;
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(20, 508);
@@ -409,9 +418,8 @@
             this.label17.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label17.Location = new System.Drawing.Point(13, 574);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(157, 37);
+            this.label17.Size = new System.Drawing.Size(0, 37);
             this.label17.TabIndex = 3;
-            this.label17.Text = "rymdturs";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label17.Click += new System.EventHandler(this.label17_Click);
             // 
@@ -649,16 +657,7 @@
             this.savebut.TabIndex = 0;
             this.savebut.Text = "Book";
             this.savebut.UseVisualStyleBackColor = true;
-            // 
-            // Withdrv
-            // 
-            this.Withdrv.AutoSize = true;
-            this.Withdrv.Location = new System.Drawing.Point(30, 627);
-            this.Withdrv.Name = "Withdrv";
-            this.Withdrv.Size = new System.Drawing.Size(249, 36);
-            this.Withdrv.TabIndex = 5;
-            this.Withdrv.Text = "Want With Driver";
-            this.Withdrv.UseVisualStyleBackColor = true;
+            this.savebut.Click += new System.EventHandler(this.savebut_Click);
             // 
             // Cabbooking
             // 
@@ -666,6 +665,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
+            this.BackgroundImage = global::Cab_Booking_Application.Properties.Resources._1810711;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1702, 1127);
             this.Controls.Add(this.groupBox2);

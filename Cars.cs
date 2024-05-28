@@ -265,7 +265,7 @@ namespace Cab_Booking_Application
                     command2.Parameters.AddWithValue("@insstr", insstr.Text);
                     command2.Parameters.AddWithValue("@insend", insend.Text);
                     command2.Parameters.AddWithValue("@emistr", emistr.Text);
-                    command2.Parameters.AddWithValue("@emiend", insend.Text); // Check if this should be insend or emiend
+                    command2.Parameters.AddWithValue("@emiend", insend.Text); 
                     command2.Parameters.AddWithValue("@Driverbox", Drivebox.SelectedItem?.ToString());
                     command2.Parameters.AddWithValue("@withdrv", withdrv.Checked);
                     command2.Parameters.AddWithValue("@Active", InActive.Checked);
@@ -295,10 +295,7 @@ namespace Cab_Booking_Application
                 {
                     MessageBox.Show("Error: " + ex.Message);
                 }
-                finally
-                {
-                    conn.Close(); // Make sure to close the connection
-                }
+               
             }
         }
 
@@ -347,6 +344,11 @@ namespace Cab_Booking_Application
             Drivebox.SelectedItem = car.DriverId;
             withdrv.Checked = car.With_Driver == 1;
             InActive.Checked = car.Active == 1;
+        }
+
+        private void Drivebox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
         }
     }
 }

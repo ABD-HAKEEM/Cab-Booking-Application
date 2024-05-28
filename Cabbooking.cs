@@ -12,7 +12,7 @@ using System.Collections.Generic;
 
 namespace Cab_Booking_Application
 {
-   
+
     public partial class Cabbooking : Form
     {
         SqlConnection conn;
@@ -63,7 +63,7 @@ namespace Cab_Booking_Application
             Date.Text = DateTime.Today.ToString("MM/dd/yyyy");
             Date.ReadOnly = true;
             VehNumber.ReadOnly = true;
-            maitxt.ReadOnly=true;
+            maitxt.ReadOnly = true;
             seattxt.ReadOnly = true;
             Fuel.ReadOnly = true;
             Type.ReadOnly = true;
@@ -87,15 +87,15 @@ namespace Cab_Booking_Application
                 }
             }
 
-            
+
             custId.Text = Username_log.ToUpper();
             cusName.Text = RegNum;
 
-           
+
 
 
         }
-        
+
         private void dateTimePicker5_ValueChanged(object sender, EventArgs e)
         {
             Date.Text = datebut.Value.ToString();
@@ -111,7 +111,7 @@ namespace Cab_Booking_Application
             //Timestart.CustomFormat = "HH:mm";
         }
 
-       
+
 
         private void dateTimePicker4_ValueChanged_1(object sender, EventArgs e)
         {
@@ -128,7 +128,7 @@ namespace Cab_Booking_Application
 
         }
 
-      
+
 
         private void clsbut_Click(object sender, EventArgs e)
         {
@@ -147,39 +147,83 @@ namespace Cab_Booking_Application
 
         private void Vehbox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            cost.Text = "";
             string selectedVehicle = Vehbox.SelectedItem.ToString();
             string[] parts = selectedVehicle.Split('-');
             string vehNo = parts[0].Trim();
-            // Retrieve cars using Car class method
 
+            // Retrieve cars using Car class method
             var cars = Car.GetCarsByVehicleNumber(vehNo, conn);
             if (cars.Count > 0)
             {
                 UpdateUI(cars[0]);
+            }
+
+            string query = "SELECT cost, Days FROM Costing WHERE vehicale = @vehNo AND stats = '0'";
+            SqlCommand command = new SqlCommand(query, conn);
+
+            string Costingtxt = "";
+            string Days = "";
+            command.Parameters.AddWithValue("@vehNo", vehNo);
+
+            using (SqlDataReader readerCost = command.ExecuteReader())
+            {
+                while (readerCost.Read())
+                {
+                    // Read costing information
+                    string costString = readerCost["cost"].ToString();
+                    string day = readerCost["Days"].ToString();
+
+                    // Check if costString is null or empty 
+                    int cost = string.IsNullOrEmpty(costString) ? 0 : int.Parse(costString);
+
+                    Costingtxt = $" {cost}";
+                    Days = $" {day}";
+                }
+            }
+
+
+
+
+            DateTime date1, date2;
+            if (DateTime.TryParse(dat2.Text, out date2) && DateTime.TryParse(dat1.Text, out date1))
+            {
+                TimeSpan duration = date2 - date1;
+
+                // Calculate cost
+                double costPerDay;
+                if (double.TryParse(Costingtxt, out costPerDay))
+                {
+                    double totalCost = duration.TotalDays * costPerDay;
+                    
+                    cost.Text = totalCost.ToString(); 
+                }
                 
             }
+           
         }
+
         private void UpdateUI(Car car)
         {
-
-            VehNumber.Text = car.Model;
-            Type.Text = car.Type;
-            maitxt.Text = car.Mileage;
-            seattxt.Text = car.Seat;
-            Fuel.Text = car.Fuel;
-
             this.maitxt.Text = "";
             this.seattxt.Text = "";
             this.VehNumber.Text = "";
             this.Type.Text = "";
             this.Fuel.Text = "";
 
+            VehNumber.Text = car.Model + " " + " " + car.Brand;
+            Type.Text = car.Type;
+            maitxt.Text = car.Mileage;
+            seattxt.Text = car.Seat;
+            Fuel.Text = car.Fuel;
+
+         
 
         }
 
         private void Clrbut_Click(object sender, EventArgs e)
         {
-            
+
             this.dat1.Text = "";
             this.dat2.Text = "";
             this.cost.Text = "";
@@ -187,7 +231,11 @@ namespace Cab_Booking_Application
             this.locto.Text = "";
             this.Timestart.Text = "";
             this.timeend.Text = "";
-
+            this.maitxt.Text = "";
+            this.seattxt.Text = "";
+            this.VehNumber.Text = "";
+            this.Type.Text = "";
+            this.Fuel.Text = "";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -195,26 +243,44 @@ namespace Cab_Booking_Application
             Vehbox.Items.Clear();
             if (dat1.Text.Length > 0 && dat2.Text.Length > 0)
             {
-                DateTime startDate;
-                if (DateTime.TryParse(dat1.Text, out startDate))
+                DateTime startDate, endDate;
+
+                if (DateTime.TryParse(dat1.Text, out startDate) && DateTime.TryParse(dat2.Text, out endDate))
                 {
                     if (startDate > DateTime.Now)
                     {
-                        string query = @"SELECT VehNo FROM Vehicalmas WHERE VehNo NOT IN (SELECT DISTINCT VehID FROM Cab_booking WHERE Cab_booking.Start_date <= @EndDate AND Cab_booking.end_date >= @StartDate)";
-                        using (SqlCommand command = new SqlCommand(query, conn))
+                        if (endDate >= startDate)
                         {
-                            command.Parameters.AddWithValue("@StartDate", dat1.Text);
-                            command.Parameters.AddWithValue("@EndDate", dat2.Text);
-                            using (SqlDataReader reader = command.ExecuteReader())
+                            string query = @"SELECT VehNo FROM Vehicalmas WHERE VehNo NOT IN  (SELECT DISTINCT VehID FROM Cab_booking WHERE Cab_booking.Start_date <= @EndDate AND Cab_booking.end_date >= @StartDate)";
+
+                            using (SqlCommand command = new SqlCommand(query, conn))
                             {
-                                while (reader.Read())
+                                command.Parameters.AddWithValue("@StartDate", startDate);
+                                command.Parameters.AddWithValue("@EndDate", endDate);
+
+                               
+                                using (SqlDataReader reader = command.ExecuteReader())
                                 {
-                                    string Vehno = reader["VehNo"].ToString();
-                                    string vehtxt = $" {Vehno}";
-                                    Vehbox.Items.Add(Vehno);
-                                    label17.Text = "Check The Avilable Cars on Vehicale Modle";
+                                    if (reader.HasRows)
+                                    {
+                                        while (reader.Read())
+                                        {
+                                            string Vehno = reader["VehNo"].ToString();
+                                            Vehbox.Items.Add(Vehno);
+                                        }
+                                        label17.Text = "Check The Available Cars on Vehicle Model";
+                                    }
+                                    else
+                                    {
+                                        label17.Text = "No Available Cars on Selected Date";
+                                    }
                                 }
+                               
                             }
+                        }
+                        else
+                        {
+                            MessageBox.Show("End date must be greater than or equal to the start date.");
                         }
                     }
                     else
@@ -224,7 +290,7 @@ namespace Cab_Booking_Application
                 }
                 else
                 {
-                    MessageBox.Show("Invalid start date format.");
+                    MessageBox.Show("Invalid date format.");
                 }
             }
             else
@@ -235,8 +301,44 @@ namespace Cab_Booking_Application
 
         private void label17_Click(object sender, EventArgs e)
         {
+            // Handle label click event if needed
+        }
+
+        private void savebut_Click(object sender, EventArgs e)
+        {
+            Order order = new Order
+                 (
+                     order_Id: Orderid.Text,
+                     cost: float.TryParse(cost.Text, out float parsedCost) ? parsedCost : 0f,
+                     cust_Name: cusName.Text,
+                     id: custId.Text,
+                     date: this.Date.Text,
+                     end_Date: dat2.Text,
+                     start_Date: dat1.Text,
+                     start_Time: Timestart.Text,
+                     end_Time: timeend.Text,
+                     from_Loc: locstar.Text,
+                     to_Loc: locto.Text,
+                     with_Driver: Withdrv.Checked ? 1 : 0,
+                     veh_ID: Vehbox.SelectedItem?.ToString()
+                 );
+
+
+
+
+
+            try
+            {
+                order.InsertOrder();
+                MessageBox.Show("Order Placed successfully.");
+                Clrbut_Click(this, EventArgs.Empty);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("An error occurred while inserting order data:");
+                Console.WriteLine(ex.Message);
+            }
 
         }
     }
-
 }

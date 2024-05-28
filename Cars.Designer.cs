@@ -177,6 +177,7 @@
             this.Drivebox.FormattingEnabled = true;
             resources.ApplyResources(this.Drivebox, "Drivebox");
             this.Drivebox.Name = "Drivebox";
+            this.Drivebox.SelectedIndexChanged += new System.EventHandler(this.Drivebox_SelectedIndexChanged);
             // 
             // Carnam1
             // 
