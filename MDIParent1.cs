@@ -204,6 +204,9 @@ namespace Cab_Booking_Application
         private void vehicalAvilabilityToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Implement this method as needed
+            Avil_Bokking f1 = new Avil_Bokking();
+            f1.MdiParent = this;
+            f1.Show();
         }
 
         private void toolStripStatusLabel1_Click(object sender, EventArgs e)
@@ -309,6 +312,12 @@ namespace Cab_Booking_Application
         private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        private void vehicalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Report f1 = new Report();
+            f1.Show();
         }
     }
 }

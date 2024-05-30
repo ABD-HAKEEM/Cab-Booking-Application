@@ -123,65 +123,148 @@ namespace Cab_Booking_Application
                 }
             }
             return cars;
-        }
-    }
 
-  /*  public class CarAvl
-    {
-        SqlConnection conn;
 
-        // Properties
-        public string Start_date { get; set; }
-        public string End_date { get; set; }
-        public string Car_id { get; set; }
-        public string Status { get; set; }
-
-        // Constructor
-        public CarAvl(string start_date, string end_date, string car_id)
-        {
-            Start_date = start_date;
-            End_date = end_date;
-            Car_id = car_id;
-
-            // Establish database connection
-            conn = DBconnection.ConnectToDB();
         }
 
-        // Method to get car availability
-        public static List<CarAvl> GetCarsAvailability(string startDate, string endDate, SqlConnection conn)
-        {
-            List<CarAvl> availableCars = new List<CarAvl>();
 
-            string query = @"SELECT VehNo FROM Vehicalmas WHERE VehNo NOT IN (SELECT DISTINCT VehID FROM Cab_booking WHERE Cab_booking.Start_date <= @EndDate AND Cab_booking.end_date >= @StartDate)";
+        public static List<Car> GetCarsByVehicle(string vehicleNumber, string vehicleBrand ,SqlConnection conn)
+        {
+            List<Car> cars = new List<Car>();
+            string query = "SELECT Pict1, VehNo, chassis, RegNo, engincc, Grade, Mileage, Fuel, Type, brand, Model, Color, Transmission, Seat, Options, Remarks," +
+                           " Lstart, LEnd, Istart, IEnd, Estart, EEnd, DriID, withdrv, Inactive FROM Vehicalmas WHERE(VehNo = @vehNo OR @vehNo IS NULL) " +
+                   "AND (brand = @Brand OR @Brand IS NULL) " +
+                   "AND Inactive = '0'";
+
+
 
             using (SqlCommand command = new SqlCommand(query, conn))
-            {
-                command.Parameters.AddWithValue("@StartDate", startDate);
-                command.Parameters.AddWithValue("@EndDate", endDate);
+                {
+                if (string.IsNullOrEmpty(vehicleNumber))
+                {
+                    command.Parameters.AddWithValue("@vehNo", DBNull.Value);
+                }
+                else
+                {
+                    command.Parameters.AddWithValue("@vehNo", vehicleNumber);
+                }
+
+                if (string.IsNullOrEmpty(vehicleBrand))
+                {
+                    command.Parameters.AddWithValue("@Brand", DBNull.Value);
+                }
+                else
+                {
+                    command.Parameters.AddWithValue("@Brand", vehicleBrand);
+                }
 
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-                        CarAvl carAvl = new CarAvl(
-                            start_date: startDate,
-                            end_date: endDate,
-                            car_id: reader["VehNo"].ToString() 
-                        )
-                        {
-                            //Status = reader["Status"].ToString()
-                        };
+                        int withDriver;
+                        int active;
 
-                        
+                        // Safely convert to integers using TryParse
+                        int.TryParse(reader["withdrv"].ToString(), out withDriver);
+                        int.TryParse(reader["Inactive"].ToString(), out active);
+
+                        Car car = new Car(
+                            carName: reader["VehNo"].ToString(),
+                            serial: reader["chassis"].ToString(),
+                            registration: reader["RegNo"].ToString(),
+                            engine: reader["engincc"].ToString(),
+                            grade: reader["Grade"].ToString(),
+                            mileage: reader["Mileage"].ToString(),
+                            fuel: reader["Fuel"].ToString(),
+                            type: reader["Type"].ToString(),
+                            brand: reader["brand"].ToString(),
+                            model: reader["Model"].ToString(),
+                            color: reader["Color"].ToString(),
+                            transmission: reader["Transmission"].ToString(),
+                            seat: reader["Seat"].ToString(),
+                            options: reader["Options"].ToString(),
+                            remarks: reader["Remarks"].ToString(),
+                            driverId: reader["DriID"].ToString(),
+                            withDriver: withDriver,
+                            active: active,
+                            lStart: reader["Lstart"].ToString(),
+                            lEnd: reader["LEnd"].ToString(),
+                            iStart: reader["Istart"].ToString(),
+                            iEnd: reader["IEnd"].ToString(),
+                            eStart: reader["Estart"].ToString(),
+                            eEnd: reader["EEnd"].ToString(),
+                            image: reader["Pict1"].ToString()
+                        );
+
+                        cars.Add(car);
                     }
                 }
             }
+            return cars;
 
-            return availableCars;
+
         }
-
     }
-*/
+
+    
+
+    /*  public class CarAvl
+      {
+          SqlConnection conn;
+
+          // Properties
+          public string Start_date { get; set; }
+          public string End_date { get; set; }
+          public string Car_id { get; set; }
+          public string Status { get; set; }
+
+          // Constructor
+          public CarAvl(string start_date, string end_date, string car_id)
+          {
+              Start_date = start_date;
+              End_date = end_date;
+              Car_id = car_id;
+
+              // Establish database connection
+              conn = DBconnection.ConnectToDB();
+          }
+
+          // Method to get car availability
+          public static List<CarAvl> GetCarsAvailability(string startDate, string endDate, SqlConnection conn)
+          {
+              List<CarAvl> availableCars = new List<CarAvl>();
+
+              string query = @"SELECT VehNo FROM Vehicalmas WHERE VehNo NOT IN (SELECT DISTINCT VehID FROM Cab_booking WHERE Cab_booking.Start_date <= @EndDate AND Cab_booking.end_date >= @StartDate)";
+
+              using (SqlCommand command = new SqlCommand(query, conn))
+              {
+                  command.Parameters.AddWithValue("@StartDate", startDate);
+                  command.Parameters.AddWithValue("@EndDate", endDate);
+
+                  using (SqlDataReader reader = command.ExecuteReader())
+                  {
+                      while (reader.Read())
+                      {
+                          CarAvl carAvl = new CarAvl(
+                              start_date: startDate,
+                              end_date: endDate,
+                              car_id: reader["VehNo"].ToString() 
+                          )
+                          {
+                              //Status = reader["Status"].ToString()
+                          };
+
+
+                      }
+                  }
+              }
+
+              return availableCars;
+          }
+
+      }
+  */
 
 
 

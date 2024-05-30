@@ -78,7 +78,7 @@
             this.exitToolStripMenuItem});
             this.fileMenu.ImageTransparentColor = System.Drawing.SystemColors.ActiveBorder;
             this.fileMenu.Name = "fileMenu";
-            this.fileMenu.Size = new System.Drawing.Size(79, 36);
+            this.fileMenu.Size = new System.Drawing.Size(79, 38);
             this.fileMenu.Text = "&File";
             this.fileMenu.Click += new System.EventHandler(this.fileMenu_Click);
             // 
@@ -145,7 +145,7 @@
             this.cabBookingToolStripMenuItem,
             this.vehicalAvilabilityToolStripMenuItem});
             this.transuctionsToolStripMenuItem.Name = "transuctionsToolStripMenuItem";
-            this.transuctionsToolStripMenuItem.Size = new System.Drawing.Size(198, 36);
+            this.transuctionsToolStripMenuItem.Size = new System.Drawing.Size(198, 38);
             this.transuctionsToolStripMenuItem.Text = "&Transactions ";
             // 
             // cabBookingToolStripMenuItem
@@ -171,38 +171,39 @@
             this.driverToolStripMenuItem1,
             this.vehicalToolStripMenuItem});
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
-            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(131, 36);
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(131, 38);
             this.reportsToolStripMenuItem.Text = "&Reports";
             // 
             // transuctionToolStripMenuItem
             // 
             this.transuctionToolStripMenuItem.Name = "transuctionToolStripMenuItem";
-            this.transuctionToolStripMenuItem.Size = new System.Drawing.Size(301, 44);
+            this.transuctionToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
             this.transuctionToolStripMenuItem.Text = "Transuction";
             // 
             // bookingToolStripMenuItem
             // 
             this.bookingToolStripMenuItem.Name = "bookingToolStripMenuItem";
-            this.bookingToolStripMenuItem.Size = new System.Drawing.Size(301, 44);
+            this.bookingToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
             this.bookingToolStripMenuItem.Text = "Booking ";
             // 
             // customerToolStripMenuItem1
             // 
             this.customerToolStripMenuItem1.Name = "customerToolStripMenuItem1";
-            this.customerToolStripMenuItem1.Size = new System.Drawing.Size(301, 44);
+            this.customerToolStripMenuItem1.Size = new System.Drawing.Size(359, 44);
             this.customerToolStripMenuItem1.Text = "Customer";
             // 
             // driverToolStripMenuItem1
             // 
             this.driverToolStripMenuItem1.Name = "driverToolStripMenuItem1";
-            this.driverToolStripMenuItem1.Size = new System.Drawing.Size(301, 44);
+            this.driverToolStripMenuItem1.Size = new System.Drawing.Size(359, 44);
             this.driverToolStripMenuItem1.Text = "Driver";
             // 
             // vehicalToolStripMenuItem
             // 
             this.vehicalToolStripMenuItem.Name = "vehicalToolStripMenuItem";
-            this.vehicalToolStripMenuItem.Size = new System.Drawing.Size(301, 44);
+            this.vehicalToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
             this.vehicalToolStripMenuItem.Text = "Vehicles ";
+            this.vehicalToolStripMenuItem.Click += new System.EventHandler(this.vehicalToolStripMenuItem_Click);
             // 
             // windowsMenu
             // 
@@ -216,7 +217,7 @@
             this.changeTextToolStripMenuItem,
             this.changeFormsColorToolStripMenuItem});
             this.windowsMenu.Name = "windowsMenu";
-            this.windowsMenu.Size = new System.Drawing.Size(148, 36);
+            this.windowsMenu.Size = new System.Drawing.Size(148, 38);
             this.windowsMenu.Text = "&Windows";
             // 
             // newWindowToolStripMenuItem
@@ -282,7 +283,7 @@
             this.userAccountToolStripMenuItem,
             this.changePasswordToolStripMenuItem});
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(132, 36);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(132, 38);
             this.settingsToolStripMenuItem.Text = "Settings";
             // 
             // userAccountToolStripMenuItem
@@ -314,7 +315,7 @@
             this.menuStrip.MdiWindowListItem = this.windowsMenu;
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Padding = new System.Windows.Forms.Padding(16, 5, 0, 5);
-            this.menuStrip.Size = new System.Drawing.Size(1686, 46);
+            this.menuStrip.Size = new System.Drawing.Size(1686, 48);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "MenuStrip";
             // 

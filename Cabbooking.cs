@@ -340,5 +340,11 @@ namespace Cab_Booking_Application
             }
 
         }
+
+        private void check_Click(object sender, EventArgs e)
+        {
+            Avil_Bokking f1 = new Avil_Bokking();
+            f1.Show();
+        }
     }
 }

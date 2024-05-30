@@ -560,6 +560,8 @@
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.CalendarMonthBackground = System.Drawing.Color.RosyBrown;
+            this.dateTimePicker1.CalendarTrailingForeColor = System.Drawing.Color.PaleVioletRed;
             this.dateTimePicker1.Location = new System.Drawing.Point(409, 38);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(34, 39);
@@ -648,6 +650,7 @@
             this.check.TabIndex = 1;
             this.check.Text = "Vehicle Availability ";
             this.check.UseVisualStyleBackColor = true;
+            this.check.Click += new System.EventHandler(this.check_Click);
             // 
             // savebut
             // 
