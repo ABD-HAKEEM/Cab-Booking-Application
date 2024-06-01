@@ -16,4 +16,7 @@
     <RemoteDebugEnabled>false</RemoteDebugEnabled>
     <StartAction>Project</StartAction>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <StartArguments>Copyright © 2024 Abdul Hakeem   All Right Recerved</StartArguments>
+  </PropertyGroup>
 </Project>

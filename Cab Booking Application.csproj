@@ -88,6 +88,7 @@
     </Compile>
     <Compile Include="car.cs" />
     <Compile Include="Car_Vehi.cs" />
+    <Compile Include="Email.cs" />
     <Compile Include="Costing.cs">
       <SubType>Form</SubType>
     </Compile>

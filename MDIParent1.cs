@@ -164,7 +164,7 @@ namespace Cab_Booking_Application
         private void MDIParent1_Load(object sender, EventArgs e)
         {
             conn = DBconnection.ConnectToDB();
-            logs.Text = Username;
+            logs.Text = Username.ToUpper();
             Regno.Text = RegNum;
 
 

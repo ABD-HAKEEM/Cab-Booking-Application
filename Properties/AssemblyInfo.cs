@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Abdul Hakeem")]
 [assembly: AssemblyProduct("Cab Booking Application")]
-[assembly: AssemblyCopyright("Copyright ©  2024")]
+[assembly: AssemblyCopyright("Copyright © 2024 Abdul Hakeem   All Right Recerved")]
 [assembly: AssemblyTrademark("Your Journey, Our Priority")]
 [assembly: AssemblyCulture("")]
 

@@ -87,6 +87,8 @@
             this.check = new System.Windows.Forms.Button();
             this.savebut = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.Emailtxt = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox10.SuspendLayout();
             this.groupBox9.SuspendLayout();
@@ -328,13 +330,15 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.Emailtxt);
+            this.groupBox6.Controls.Add(this.label18);
             this.groupBox6.Controls.Add(this.cusName);
             this.groupBox6.Controls.Add(this.label16);
             this.groupBox6.Controls.Add(this.custId);
             this.groupBox6.Controls.Add(this.label1);
             this.groupBox6.Location = new System.Drawing.Point(33, 41);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(583, 191);
+            this.groupBox6.Size = new System.Drawing.Size(583, 217);
             this.groupBox6.TabIndex = 0;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Customer Details";
@@ -384,9 +388,9 @@
             this.groupBox3.Controls.Add(this.groupBox5);
             this.groupBox3.Controls.Add(this.groupBox4);
             this.groupBox3.Font = new System.Drawing.Font("Cambria", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(37, 238);
+            this.groupBox3.Location = new System.Drawing.Point(37, 264);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(579, 686);
+            this.groupBox3.Size = new System.Drawing.Size(579, 660);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Booking Field";
@@ -394,16 +398,17 @@
             // Withdrv
             // 
             this.Withdrv.AutoSize = true;
-            this.Withdrv.Location = new System.Drawing.Point(30, 627);
+            this.Withdrv.Font = new System.Drawing.Font("Cambria", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Withdrv.Location = new System.Drawing.Point(29, 608);
             this.Withdrv.Name = "Withdrv";
-            this.Withdrv.Size = new System.Drawing.Size(249, 36);
+            this.Withdrv.Size = new System.Drawing.Size(204, 29);
             this.Withdrv.TabIndex = 5;
             this.Withdrv.Text = "Want With Driver";
             this.Withdrv.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(20, 508);
+            this.button1.Location = new System.Drawing.Point(20, 499);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(539, 44);
             this.button1.TabIndex = 4;
@@ -631,6 +636,7 @@
             this.printbut.TabIndex = 3;
             this.printbut.Text = "Print";
             this.printbut.UseVisualStyleBackColor = true;
+            this.printbut.Click += new System.EventHandler(this.printbut_Click);
             // 
             // Clrbut
             // 
@@ -662,13 +668,30 @@
             this.savebut.UseVisualStyleBackColor = true;
             this.savebut.Click += new System.EventHandler(this.savebut_Click);
             // 
+            // Emailtxt
+            // 
+            this.Emailtxt.Font = new System.Drawing.Font("Cambria", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Emailtxt.Location = new System.Drawing.Point(215, 163);
+            this.Emailtxt.Name = "Emailtxt";
+            this.Emailtxt.Size = new System.Drawing.Size(344, 32);
+            this.Emailtxt.TabIndex = 4;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Cambria", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(6, 166);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(208, 32);
+            this.label18.TabIndex = 5;
+            this.label18.Text = "Customer Email";
+            // 
             // Cabbooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
-            this.BackgroundImage = global::Cab_Booking_Application.Properties.Resources._1810711;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1702, 1127);
             this.Controls.Add(this.groupBox2);
@@ -760,5 +783,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.CheckBox Withdrv;
+        private System.Windows.Forms.TextBox Emailtxt;
+        private System.Windows.Forms.Label label18;
     }
 }

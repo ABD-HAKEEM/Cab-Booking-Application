@@ -62,6 +62,7 @@
             this.logs = new System.Windows.Forms.ToolStripStatusLabel();
             this.logs2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.Regno = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -177,31 +178,31 @@
             // transuctionToolStripMenuItem
             // 
             this.transuctionToolStripMenuItem.Name = "transuctionToolStripMenuItem";
-            this.transuctionToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.transuctionToolStripMenuItem.Size = new System.Drawing.Size(301, 44);
             this.transuctionToolStripMenuItem.Text = "Transuction";
             // 
             // bookingToolStripMenuItem
             // 
             this.bookingToolStripMenuItem.Name = "bookingToolStripMenuItem";
-            this.bookingToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.bookingToolStripMenuItem.Size = new System.Drawing.Size(301, 44);
             this.bookingToolStripMenuItem.Text = "Booking ";
             // 
             // customerToolStripMenuItem1
             // 
             this.customerToolStripMenuItem1.Name = "customerToolStripMenuItem1";
-            this.customerToolStripMenuItem1.Size = new System.Drawing.Size(359, 44);
+            this.customerToolStripMenuItem1.Size = new System.Drawing.Size(301, 44);
             this.customerToolStripMenuItem1.Text = "Customer";
             // 
             // driverToolStripMenuItem1
             // 
             this.driverToolStripMenuItem1.Name = "driverToolStripMenuItem1";
-            this.driverToolStripMenuItem1.Size = new System.Drawing.Size(359, 44);
+            this.driverToolStripMenuItem1.Size = new System.Drawing.Size(301, 44);
             this.driverToolStripMenuItem1.Text = "Driver";
             // 
             // vehicalToolStripMenuItem
             // 
             this.vehicalToolStripMenuItem.Name = "vehicalToolStripMenuItem";
-            this.vehicalToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.vehicalToolStripMenuItem.Size = new System.Drawing.Size(301, 44);
             this.vehicalToolStripMenuItem.Text = "Vehicles ";
             this.vehicalToolStripMenuItem.Click += new System.EventHandler(this.vehicalToolStripMenuItem_Click);
             // 
@@ -321,34 +322,69 @@
             // 
             // statusStrip1
             // 
+            this.statusStrip1.BackgroundImage = global::Cab_Booking_Application.Properties.Resources.th1;
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.logs,
             this.logs2,
-            this.Regno});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 1073);
+            this.Regno,
+            this.toolStripStatusLabel1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 1069);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1686, 42);
+            this.statusStrip1.Size = new System.Drawing.Size(1686, 46);
             this.statusStrip1.TabIndex = 4;
             this.statusStrip1.Text = "statusStrip1";
             this.statusStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.statusStrip1_ItemClicked);
             // 
             // logs
             // 
+            this.logs.BackColor = System.Drawing.Color.RosyBrown;
+            this.logs.BackgroundImage = global::Cab_Booking_Application.Properties.Resources.th;
+            this.logs.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.logs.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right)));
+            this.logs.BorderStyle = System.Windows.Forms.Border3DStyle.RaisedOuter;
+            this.logs.Font = new System.Drawing.Font("Cambria", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logs.Name = "logs";
-            this.logs.Size = new System.Drawing.Size(237, 32);
+            this.logs.Size = new System.Drawing.Size(285, 36);
             this.logs.Text = "toolStripStatusLabel1";
             // 
             // logs2
             // 
+            this.logs2.BackgroundImage = global::Cab_Booking_Application.Properties.Resources.th;
+            this.logs2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.logs2.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right)));
+            this.logs2.BorderStyle = System.Windows.Forms.Border3DStyle.RaisedOuter;
+            this.logs2.Font = new System.Drawing.Font("Cambria", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logs2.Name = "logs2";
-            this.logs2.Size = new System.Drawing.Size(0, 32);
+            this.logs2.Size = new System.Drawing.Size(285, 36);
+            this.logs2.Text = "toolStripStatusLabel1";
             // 
             // Regno
             // 
+            this.Regno.BackgroundImage = global::Cab_Booking_Application.Properties.Resources.th;
+            this.Regno.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.Regno.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right)));
+            this.Regno.BorderStyle = System.Windows.Forms.Border3DStyle.RaisedOuter;
+            this.Regno.Font = new System.Drawing.Font("Cambria", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Regno.Name = "Regno";
-            this.Regno.Size = new System.Drawing.Size(237, 32);
+            this.Regno.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Regno.Size = new System.Drawing.Size(285, 36);
             this.Regno.Text = "toolStripStatusLabel1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.BackgroundImage = global::Cab_Booking_Application.Properties.Resources.th;
+            this.toolStripStatusLabel1.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right)));
+            this.toolStripStatusLabel1.BorderStyle = System.Windows.Forms.Border3DStyle.RaisedOuter;
+            this.toolStripStatusLabel1.Font = new System.Drawing.Font("Cambria", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripStatusLabel1.ForeColor = System.Drawing.Color.Black;
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.toolStripStatusLabel1.RightToLeftAutoMirrorImage = true;
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(754, 36);
+            this.toolStripStatusLabel1.Spring = true;
+            this.toolStripStatusLabel1.Text = "Copyright © 2024 Abdul Hakeem   All Right Recerved";
+            this.toolStripStatusLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // MDIParent1
             // 
@@ -412,6 +448,7 @@
         private System.Windows.Forms.ToolStripStatusLabel logs2;
         private System.Windows.Forms.ToolStripMenuItem driverRegistrationToolStripMenuItem;
         private System.Windows.Forms.ToolStripStatusLabel Regno;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
     }
 }
 

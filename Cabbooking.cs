@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Collections.Generic;
+using System.Net;
+using System.Net.Mail;
+using System.Net.Mime;
 
 namespace Cab_Booking_Application
 {
@@ -70,6 +73,7 @@ namespace Cab_Booking_Application
             Vehbox.DropDownStyle = ComboBoxStyle.DropDownList;
             custId.ReadOnly = true;
             cusName.ReadOnly = true;
+            Emailtxt.ReadOnly = true;
 
             string query = "SELECT Description FROM Location WHERE Location.ststus = '0'";
 
@@ -88,10 +92,20 @@ namespace Cab_Booking_Application
             }
 
 
-            custId.Text = Username_log.ToUpper();
-            cusName.Text = RegNum;
+            custId.Text = RegNum;
+            cusName.Text = Username_log.ToUpper();
+
+            string queryCustomer = "SELECT Email FROM Customer WHERE RegNo = @ID";
+
+            using (SqlCommand commandCustomer = new SqlCommand(queryCustomer, conn))
+            {
+                commandCustomer.Parameters.AddWithValue("@ID", custId.Text);
 
 
+                string email = commandCustomer.ExecuteScalar()?.ToString();
+                Emailtxt.Text = email;
+
+            }
 
 
         }
@@ -195,12 +209,12 @@ namespace Cab_Booking_Application
                 if (double.TryParse(Costingtxt, out costPerDay))
                 {
                     double totalCost = duration.TotalDays * costPerDay;
-                    
-                    cost.Text = totalCost.ToString(); 
+
+                    cost.Text = totalCost.ToString();
                 }
-                
+
             }
-           
+
         }
 
         private void UpdateUI(Car car)
@@ -217,7 +231,7 @@ namespace Cab_Booking_Application
             seattxt.Text = car.Seat;
             Fuel.Text = car.Fuel;
 
-         
+
 
         }
 
@@ -258,7 +272,7 @@ namespace Cab_Booking_Application
                                 command.Parameters.AddWithValue("@StartDate", startDate);
                                 command.Parameters.AddWithValue("@EndDate", endDate);
 
-                               
+
                                 using (SqlDataReader reader = command.ExecuteReader())
                                 {
                                     if (reader.HasRows)
@@ -275,7 +289,7 @@ namespace Cab_Booking_Application
                                         label17.Text = "No Available Cars on Selected Date";
                                     }
                                 }
-                               
+
                             }
                         }
                         else
@@ -306,38 +320,43 @@ namespace Cab_Booking_Application
 
         private void savebut_Click(object sender, EventArgs e)
         {
-            Order order = new Order
-                 (
-                     order_Id: Orderid.Text,
-                     cost: float.TryParse(cost.Text, out float parsedCost) ? parsedCost : 0f,
-                     cust_Name: cusName.Text,
-                     id: custId.Text,
-                     date: this.Date.Text,
-                     end_Date: dat2.Text,
-                     start_Date: dat1.Text,
-                     start_Time: Timestart.Text,
-                     end_Time: timeend.Text,
-                     from_Loc: locstar.Text,
-                     to_Loc: locto.Text,
-                     with_Driver: Withdrv.Checked ? 1 : 0,
-                     veh_ID: Vehbox.SelectedItem?.ToString()
-                 );
+            /*    Order order = new Order
+                     (
+                         order_Id: Orderid.Text,
+                         cost: float.TryParse(cost.Text, out float parsedCost) ? parsedCost : 0f,
+                         cust_Name: cusName.Text,
+                         id: custId.Text,
+                         date: this.Date.Text,
+                         end_Date: dat2.Text,
+                         start_Date: dat1.Text,
+                         start_Time: Timestart.Text,
+                         end_Time: timeend.Text,
+                         from_Loc: locstar.Text,
+                         to_Loc: locto.Text,
+                         with_Driver: Withdrv.Checked ? 1 : 0,
+                         veh_ID: Vehbox.SelectedItem?.ToString()
+                     );
 
 
 
 
 
-            try
-            {
-                order.InsertOrder();
-                MessageBox.Show("Order Placed successfully.");
-                Clrbut_Click(this, EventArgs.Empty);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("An error occurred while inserting order data:");
-                Console.WriteLine(ex.Message);
-            }
+                try
+                {
+                    order.InsertOrder();
+
+                    MessageBox.Show("Order Placed successfully.");
+                    printbut_Click(this, EventArgs.Empty);
+                    Clrbut_Click(this, EventArgs.Empty);
+
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Failed to place order. Error: " + ex.Message);
+                }
+    */
+            printbut_Click(this, EventArgs.Empty);
 
         }
 
@@ -346,5 +365,36 @@ namespace Cab_Booking_Application
             Avil_Bokking f1 = new Avil_Bokking();
             f1.Show();
         }
+
+     private void printbut_Click(object sender, EventArgs e)
+{
+    try
+    {
+        // Create an email object with order details
+        Email email = new Email
+        (
+            order_Id: Orderid.Text,
+            cost: cost.Text,
+            cust_Name: cusName.Text,
+            id: custId.Text,
+            date: this.Date.Text,
+            end_Date: dat2.Text,
+            start_Date: dat1.Text,
+            from_Loc: locstar.Text,
+            to_Loc: locto.Text,
+            veh_ID: Vehbox.Text
+        );
+
+        // Send email to customer
+        email.SendEmailToCustomer();
+    }
+    catch (Exception ex)
+    {
+        // Handle any exceptions that occur during email sending process
+        MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+    }
+}
+
+
     }
 }
