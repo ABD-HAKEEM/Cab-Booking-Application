@@ -319,5 +319,10 @@ namespace Cab_Booking_Application
             Report f1 = new Report();
             f1.Show();
         }
+
+        private void transuctionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -53,6 +53,8 @@
             this.Orderid = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.Emailtxt = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
             this.cusName = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.custId = new System.Windows.Forms.TextBox();
@@ -87,8 +89,6 @@
             this.check = new System.Windows.Forms.Button();
             this.savebut = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.Emailtxt = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox10.SuspendLayout();
             this.groupBox9.SuspendLayout();
@@ -342,6 +342,24 @@
             this.groupBox6.TabIndex = 0;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Customer Details";
+            // 
+            // Emailtxt
+            // 
+            this.Emailtxt.Font = new System.Drawing.Font("Cambria", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Emailtxt.Location = new System.Drawing.Point(215, 163);
+            this.Emailtxt.Name = "Emailtxt";
+            this.Emailtxt.Size = new System.Drawing.Size(344, 32);
+            this.Emailtxt.TabIndex = 4;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Cambria", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(6, 166);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(208, 32);
+            this.label18.TabIndex = 5;
+            this.label18.Text = "Customer Email";
             // 
             // cusName
             // 
@@ -668,24 +686,6 @@
             this.savebut.UseVisualStyleBackColor = true;
             this.savebut.Click += new System.EventHandler(this.savebut_Click);
             // 
-            // Emailtxt
-            // 
-            this.Emailtxt.Font = new System.Drawing.Font("Cambria", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Emailtxt.Location = new System.Drawing.Point(215, 163);
-            this.Emailtxt.Name = "Emailtxt";
-            this.Emailtxt.Size = new System.Drawing.Size(344, 32);
-            this.Emailtxt.TabIndex = 4;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Cambria", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(6, 166);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(208, 32);
-            this.label18.TabIndex = 5;
-            this.label18.Text = "Customer Email";
-            // 
             // Cabbooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -700,7 +700,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(1728, 1198);
             this.Name = "Cabbooking";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cabbooking";
             this.Load += new System.EventHandler(this.Reports_Load);
             this.groupBox1.ResumeLayout(false);

@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Mail;
-using System.Net.Mime;
+using System.IO;
 
 namespace Cab_Booking_Application
 {
@@ -320,42 +320,42 @@ namespace Cab_Booking_Application
 
         private void savebut_Click(object sender, EventArgs e)
         {
-            /*    Order order = new Order
-                     (
-                         order_Id: Orderid.Text,
-                         cost: float.TryParse(cost.Text, out float parsedCost) ? parsedCost : 0f,
-                         cust_Name: cusName.Text,
-                         id: custId.Text,
-                         date: this.Date.Text,
-                         end_Date: dat2.Text,
-                         start_Date: dat1.Text,
-                         start_Time: Timestart.Text,
-                         end_Time: timeend.Text,
-                         from_Loc: locstar.Text,
-                         to_Loc: locto.Text,
-                         with_Driver: Withdrv.Checked ? 1 : 0,
-                         veh_ID: Vehbox.SelectedItem?.ToString()
-                     );
+            Order order = new Order
+                 (
+                     order_Id: Orderid.Text,
+                     cost: float.TryParse(cost.Text, out float parsedCost) ? parsedCost : 0f,
+                     cust_Name: cusName.Text,
+                     id: custId.Text,
+                     date: this.Date.Text,
+                     end_Date: dat2.Text,
+                     start_Date: dat1.Text,
+                     start_Time: Timestart.Text,
+                     end_Time: timeend.Text,
+                     from_Loc: locstar.Text,
+                     to_Loc: locto.Text,
+                     with_Driver: Withdrv.Checked ? 1 : 0,
+                     veh_ID: Vehbox.SelectedItem?.ToString()
+                 );
 
 
 
 
 
-                try
-                {
-                    order.InsertOrder();
+            try
+            {
+                order.InsertOrder();
 
-                    MessageBox.Show("Order Placed successfully.");
-                    printbut_Click(this, EventArgs.Empty);
-                    Clrbut_Click(this, EventArgs.Empty);
+                MessageBox.Show("Order Placed successfully.");
+                printbut_Click(this, EventArgs.Empty);
+                Clrbut_Click(this, EventArgs.Empty);
 
 
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Failed to place order. Error: " + ex.Message);
-                }
-    */
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to place order. Error: " + ex.Message);
+            }
+
             printbut_Click(this, EventArgs.Empty);
 
         }
@@ -366,35 +366,35 @@ namespace Cab_Booking_Application
             f1.Show();
         }
 
-     private void printbut_Click(object sender, EventArgs e)
-{
-    try
-    {
-        // Create an email object with order details
-        Email email = new Email
-        (
-            order_Id: Orderid.Text,
-            cost: cost.Text,
-            cust_Name: cusName.Text,
-            id: custId.Text,
-            date: this.Date.Text,
-            end_Date: dat2.Text,
-            start_Date: dat1.Text,
-            from_Loc: locstar.Text,
-            to_Loc: locto.Text,
-            veh_ID: Vehbox.Text
-        );
+        private void printbut_Click(object sender, EventArgs e)
+        {
 
-        // Send email to customer
-        email.SendEmailToCustomer();
-    }
-    catch (Exception ex)
-    {
-        // Handle any exceptions that occur during email sending process
-        MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-    }
-}
+            try
+            {
+                // Create an email object with order details
+                Email email = new Email
+                (
+                    id: custId.Text, // Ensure the order of parameters matches the constructor
+                    cust_Name: cusName.Text,
+                    date: this.Date.Text,
+                    order_Id: Orderid.Text,
+                    cost: cost.Text,
+                    start_Date: dat1.Text,
+                    end_Date: dat2.Text,
+                    from_Loc: locstar.Text,
+                    to_Loc: locto.Text,
+                    veh_ID: Vehbox.Text
+                );
 
+                // Send email to customer
+                email.SendEmailToCustomer();
+            }
+            catch (Exception ex)
+            {
+                // Handle any exceptions that occur during email sending process
+                MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
     }
 }

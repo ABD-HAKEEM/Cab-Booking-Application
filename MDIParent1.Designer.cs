@@ -178,31 +178,32 @@
             // transuctionToolStripMenuItem
             // 
             this.transuctionToolStripMenuItem.Name = "transuctionToolStripMenuItem";
-            this.transuctionToolStripMenuItem.Size = new System.Drawing.Size(301, 44);
+            this.transuctionToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
             this.transuctionToolStripMenuItem.Text = "Transuction";
+            this.transuctionToolStripMenuItem.Click += new System.EventHandler(this.transuctionToolStripMenuItem_Click);
             // 
             // bookingToolStripMenuItem
             // 
             this.bookingToolStripMenuItem.Name = "bookingToolStripMenuItem";
-            this.bookingToolStripMenuItem.Size = new System.Drawing.Size(301, 44);
+            this.bookingToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
             this.bookingToolStripMenuItem.Text = "Booking ";
             // 
             // customerToolStripMenuItem1
             // 
             this.customerToolStripMenuItem1.Name = "customerToolStripMenuItem1";
-            this.customerToolStripMenuItem1.Size = new System.Drawing.Size(301, 44);
+            this.customerToolStripMenuItem1.Size = new System.Drawing.Size(359, 44);
             this.customerToolStripMenuItem1.Text = "Customer";
             // 
             // driverToolStripMenuItem1
             // 
             this.driverToolStripMenuItem1.Name = "driverToolStripMenuItem1";
-            this.driverToolStripMenuItem1.Size = new System.Drawing.Size(301, 44);
+            this.driverToolStripMenuItem1.Size = new System.Drawing.Size(359, 44);
             this.driverToolStripMenuItem1.Text = "Driver";
             // 
             // vehicalToolStripMenuItem
             // 
             this.vehicalToolStripMenuItem.Name = "vehicalToolStripMenuItem";
-            this.vehicalToolStripMenuItem.Size = new System.Drawing.Size(301, 44);
+            this.vehicalToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
             this.vehicalToolStripMenuItem.Text = "Vehicles ";
             this.vehicalToolStripMenuItem.Click += new System.EventHandler(this.vehicalToolStripMenuItem_Click);
             // 
@@ -381,7 +382,7 @@
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.toolStripStatusLabel1.RightToLeftAutoMirrorImage = true;
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(754, 36);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(816, 36);
             this.toolStripStatusLabel1.Spring = true;
             this.toolStripStatusLabel1.Text = "Copyright © 2024 Abdul Hakeem   All Right Recerved";
             this.toolStripStatusLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
