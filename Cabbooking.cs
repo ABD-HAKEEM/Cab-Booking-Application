@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using System.Collections.Generic;
 using System.Net;
 using System.Net.Mail;
 using System.IO;
@@ -21,8 +20,7 @@ namespace Cab_Booking_Application
         SqlConnection conn;
         public string Username_log { get; set; }
         public string RegNum { get; set; }
-        private Random random = new Random();
-        private HashSet<int> generatedNumbers = new HashSet<int>();
+       
         public Cabbooking()
         {
             InitializeComponent();
@@ -45,21 +43,16 @@ namespace Cab_Booking_Application
         {
 
         }
-        private void Autogen()
-        {
-            int number;
-            do
-            {
-                number = random.Next(100000, 999999);
-            } while (generatedNumbers.Contains(number));
-
-            generatedNumbers.Add(number);
-            Orderid.Text = "CB" + number.ToString();
-        }
+       
         private void Reports_Load(object sender, EventArgs e)
         {
+            Order order = new Order(
+               
+                    date: Date.Text,
+                    orderid: Orderid.Text
+                );
 
-            Autogen();
+            order.Autogen();
 
             conn = DBconnection.ConnectToDB();
 
@@ -320,7 +313,7 @@ namespace Cab_Booking_Application
 
         private void savebut_Click(object sender, EventArgs e)
         {
-            Order order = new Order
+            Customer order = new Customer
                  (
                      order_Id: Orderid.Text,
                      cost: float.TryParse(cost.Text, out float parsedCost) ? parsedCost : 0f,
@@ -356,7 +349,7 @@ namespace Cab_Booking_Application
                 MessageBox.Show("Failed to place order. Error: " + ex.Message);
             }
 
-            printbut_Click(this, EventArgs.Empty);
+           
 
         }
 
