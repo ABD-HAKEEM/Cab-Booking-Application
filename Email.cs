@@ -20,8 +20,9 @@ namespace Cab_Booking_Application
         public string From_Loc { get; set; }
         public string To_Loc { get; set; }
         public string Veh_ID { get; set; }
+        public string EmailAddress { get; set; }
 
-        public Email(string id, string cust_Name, string date, string order_Id, string cost, string start_Date, string end_Date, string from_Loc, string to_Loc, string veh_ID)
+        public Email(string id, string cust_Name, string date, string order_Id, string cost, string start_Date, string end_Date, string from_Loc, string to_Loc, string veh_ID,string email)
         {
             Id = id;
             Cust_Name = cust_Name;
@@ -33,6 +34,7 @@ namespace Cab_Booking_Application
             From_Loc = from_Loc;
             To_Loc = to_Loc;
             Veh_ID = veh_ID;
+            EmailAddress = email;
             conn = DBconnection.ConnectToDB();
         }
 
@@ -202,7 +204,7 @@ namespace Cab_Booking_Application
        
         }
 
-        public void SendEmailToCustomer()
+        public void SendEmailToCustomer(string email)
         {
             try
             {
@@ -214,15 +216,15 @@ namespace Cab_Booking_Application
                 mySmtpClient.Credentials = basicAuthenticationInfo;
 
                 // add from, to mailaddresses
-                MailAddress from = new MailAddress("hakeemfareed@gosmart.lk", "TestFromName");
-                MailAddress to = new MailAddress("hakeemfareed01@gmail.com", "Customer");
+                MailAddress from = new MailAddress("hakeemfareed@gosmart.lk", "Abdul Hakeem");
+                MailAddress to = new MailAddress(EmailAddress, "Customer");
                 MailMessage myMail = new MailMessage(from, to);
 
                 // add ReplyTo
                 MailAddress replyTo = new MailAddress("auto@gosmart.lk");
                 myMail.ReplyToList.Add(replyTo);
 
-                myMail.Subject = "Your Invoice";
+                myMail.Subject = "Your Invoice" + "-" + Order_Id;
                 myMail.SubjectEncoding = System.Text.Encoding.UTF8;
                 myMail.Body = GenerateInvoiceHtml();
                 myMail.BodyEncoding = System.Text.Encoding.UTF8;

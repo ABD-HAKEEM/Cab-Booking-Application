@@ -242,6 +242,9 @@
     <None Include="Resources\958461.jpg" />
     <None Include="Resources\th1.jpeg" />
     <None Include="Resources\1810711.jpg" />
+    <None Include="Resources\bg-3-full.jpg" />
+    <None Include="Resources\image.jpeg" />
+    <None Include="Resources\Taxi-background.png" />
     <Content Include="Server_Path.txt" />
   </ItemGroup>
   <ItemGroup>

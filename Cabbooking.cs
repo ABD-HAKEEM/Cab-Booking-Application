@@ -47,16 +47,17 @@ namespace Cab_Booking_Application
         private void Reports_Load(object sender, EventArgs e)
         {
             Order order = new Order(
-               
-                    date: Date.Text,
-                    orderid: Orderid.Text
-                );
-
+                        date: Date.Text,
+                     orderid: Orderid.Text
+                 );
             order.Autogen();
+            Orderid.Text = order.Order_ID;
+            Date.Text = order.Date;
+
 
             conn = DBconnection.ConnectToDB();
 
-            Date.Text = DateTime.Today.ToString("MM/dd/yyyy");
+           
             Date.ReadOnly = true;
             VehNumber.ReadOnly = true;
             maitxt.ReadOnly = true;
@@ -67,6 +68,8 @@ namespace Cab_Booking_Application
             custId.ReadOnly = true;
             cusName.ReadOnly = true;
             Emailtxt.ReadOnly = true;
+            Date.ReadOnly = true;
+           Orderid.ReadOnly = true;
 
             string query = "SELECT Description FROM Location WHERE Location.ststus = '0'";
 
@@ -243,6 +246,14 @@ namespace Cab_Booking_Application
             this.VehNumber.Text = "";
             this.Type.Text = "";
             this.Fuel.Text = "";
+            Order order = new Order(
+                       date: Date.Text,
+                    orderid: Orderid.Text
+                );
+            order.Autogen();
+            Orderid.Text = order.Order_ID;
+            Date.Text = order.Date;
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -364,7 +375,9 @@ namespace Cab_Booking_Application
 
             try
             {
+                string emailadd = Emailtxt.Text;
                 // Create an email object with order details
+                
                 Email email = new Email
                 (
                     id: custId.Text, // Ensure the order of parameters matches the constructor
@@ -376,11 +389,13 @@ namespace Cab_Booking_Application
                     end_Date: dat2.Text,
                     from_Loc: locstar.Text,
                     to_Loc: locto.Text,
-                    veh_ID: Vehbox.Text
+                    veh_ID: Vehbox.Text,
+                    email:emailadd
+                    
                 );
 
                 // Send email to customer
-                email.SendEmailToCustomer();
+                email.SendEmailToCustomer(emailadd);
             }
             catch (Exception ex)
             {

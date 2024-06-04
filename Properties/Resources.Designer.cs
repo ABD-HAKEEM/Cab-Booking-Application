@@ -114,6 +114,16 @@ namespace Cab_Booking_Application.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bg_3_full {
+            get {
+                object obj = ResourceManager.GetObject("bg-3-full", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cars {
             get {
                 object obj = ResourceManager.GetObject("cars", resourceCulture);
@@ -154,6 +164,16 @@ namespace Cab_Booking_Application.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap image {
+            get {
+                object obj = ResourceManager.GetObject("image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap marker {
             get {
                 object obj = ResourceManager.GetObject("marker", resourceCulture);
@@ -167,6 +187,16 @@ namespace Cab_Booking_Application.Properties {
         internal static System.Drawing.Bitmap steering_wheel {
             get {
                 object obj = ResourceManager.GetObject("steering-wheel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Taxi_background {
+            get {
+                object obj = ResourceManager.GetObject("Taxi-background", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

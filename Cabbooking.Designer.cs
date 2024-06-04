@@ -131,7 +131,7 @@
             // 
             this.cost.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.cost.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cost.ForeColor = System.Drawing.Color.SeaShell;
+            this.cost.ForeColor = System.Drawing.Color.Black;
             this.cost.Location = new System.Drawing.Point(368, 301);
             this.cost.Name = "cost";
             this.cost.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -147,7 +147,7 @@
             this.label15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label15.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label15.Font = new System.Drawing.Font("Castellar", 19.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.Honeydew;
+            this.label15.ForeColor = System.Drawing.Color.SaddleBrown;
             this.label15.Location = new System.Drawing.Point(10, 43);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(406, 66);
@@ -288,10 +288,11 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.Font = new System.Drawing.Font("Cambria", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(754, 54);
+            this.comboBox1.Location = new System.Drawing.Point(747, 47);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(211, 33);
+            this.comboBox1.Size = new System.Drawing.Size(211, 40);
             this.comboBox1.TabIndex = 4;
             // 
             // datebut
@@ -305,7 +306,7 @@
             // Date
             // 
             this.Date.Font = new System.Drawing.Font("Cambria", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Date.Location = new System.Drawing.Point(515, 48);
+            this.Date.Location = new System.Drawing.Point(515, 49);
             this.Date.Name = "Date";
             this.Date.Size = new System.Drawing.Size(226, 39);
             this.Date.TabIndex = 3;
@@ -702,7 +703,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
-            this.BackgroundImage = global::Cab_Booking_Application.Properties.Resources._181071;
+            this.BackgroundImage = global::Cab_Booking_Application.Properties.Resources.Taxi_background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1702, 1127);
             this.Controls.Add(this.groupBox2);

@@ -83,5 +83,37 @@ namespace Cab_Booking_Application
             
            
         }
+
+      /*  public void carAvailable(string start_Date, string end_Date, SqlConnection conn)
+        {
+            string query = @"SELECT VehNo, brand, Model FROM Vehicalmas WHERE VehNo NOT IN  
+                     (SELECT DISTINCT VehID FROM Cab_booking WHERE Start_date <= @EndDate AND End_date >= @StartDate)";
+
+            using (SqlCommand command = new SqlCommand(query, conn))
+            {
+                command.Parameters.AddWithValue("@StartDate", start_Date);
+                command.Parameters.AddWithValue("@EndDate", end_Date);
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            string Vehno = reader["VehNo"].ToString();
+                            string Brand = reader["brand"].ToString();
+                            string Modle = reader["Model"].ToString();
+
+                            string Vehicle = Vehno + "  " + Brand + "  " + Modle;
+                            // Do something with 'Vehicle', like adding it to a list or displaying it
+                        }
+                    }
+                    else
+                    {
+                       // MessageBox.Show("No vehicles available for the specified date range.");
+                    }
+                }
+            }
+        }*/
     }
 }
