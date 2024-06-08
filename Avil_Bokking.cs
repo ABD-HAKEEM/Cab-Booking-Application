@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace Cab_Booking_Application
 {
@@ -21,7 +14,7 @@ namespace Cab_Booking_Application
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-            Dat1.Text= dateTimePicker1.Value.ToShortDateString();
+            Dat1.Text = dateTimePicker1.Value.ToShortDateString();
         }
 
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
@@ -67,9 +60,9 @@ namespace Cab_Booking_Application
                                             string Vehicals = Vehno + "  " + Brand + "  " + Modle;
                                             listView1.Items.Add(Vehicals);
                                         }
-                                        
+
                                     }
-                                   
+
                                 }
 
                             }

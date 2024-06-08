@@ -149,7 +149,7 @@ namespace Cab_Booking_Application
                             // Set the visibility of the menu item
                             menuItem.Visible = statusType;
                         }
-                        
+
                     }
                 }
             }
@@ -287,7 +287,7 @@ namespace Cab_Booking_Application
             f1.Show();
         }
 
-       
+
         private void pcSettingToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -316,13 +316,26 @@ namespace Cab_Booking_Application
 
         private void vehicalToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
+
             Report f1 = new Report();
+            f1.Veh_Report = "VehicaleRpt";
+            f1.Text= "Vehicale";
             f1.Show();
+
         }
 
         private void transuctionToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Booking_Click(object sender, EventArgs e)
+        {
+            Report f1 =new Report();
+            f1.Ordr_Report = "OrderRpt";
+            f1.Text = "Order Report";
+            f1.Show();
         }
     }
 }

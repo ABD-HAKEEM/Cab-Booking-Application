@@ -39,7 +39,7 @@ namespace Cab_Booking_Application
 
             try
             {
-             
+
                 using (SqlCommand command = new SqlCommand(query, conn))
                 {
                     command.Parameters.AddWithValue("@regno", registration);
@@ -67,13 +67,13 @@ namespace Cab_Booking_Application
             }
             catch (Exception ex)
             {
-                
+
                 Console.WriteLine(ex.Message);
             }
-         
+
             return driversList;
         }
     }
 
-  
+
 }

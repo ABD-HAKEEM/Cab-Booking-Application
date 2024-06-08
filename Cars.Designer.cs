@@ -102,6 +102,7 @@
             this.lodbtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -128,6 +129,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.Clrbtn);
             this.groupBox2.Controls.Add(this.savbtn);
@@ -798,6 +800,13 @@
             resources.ApplyResources(this.imageList1, "imageList1");
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
+            // button1
+            // 
+            resources.ApplyResources(this.button1, "button1");
+            this.button1.Name = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Cars
             // 
             resources.ApplyResources(this, "$this");
@@ -901,5 +910,6 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.ComboBox Drivebox;
         private System.Windows.Forms.CheckBox withdrv;
+        private System.Windows.Forms.Button button1;
     }
 }

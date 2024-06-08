@@ -128,7 +128,7 @@ namespace Cab_Booking_Application
                         command2.Parameters.AddWithValue("@No_of_day_s", daysbox.SelectedItem?.ToString());
                         command2.Parameters.AddWithValue("@No_of_H", textBox1.Text);
 
-                    
+
                         int rowsAffected = command2.ExecuteNonQuery();
 
                         if (rowsAffected > 0)
@@ -151,7 +151,7 @@ namespace Cab_Booking_Application
             {
                 MessageBox.Show("An error occurred: " + ex.Message);
             }
-          
+
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)

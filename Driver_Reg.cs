@@ -1,7 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using System.Collections.Generic;
 
 namespace Cab_Booking_Application
 {
@@ -44,10 +44,10 @@ namespace Cab_Booking_Application
                   type: Typ.Text,
                   iDNumber: idtxt.Text,
                   address: Addtxt.Text,
-                  telNumber: Teltxt.Text.ToString()=="1",
+                  telNumber: Teltxt.Text.ToString() == "1",
                   username: usrnam.Text,
                   password: pass.Text
-                  
+
                     );
 
             admin.InsertDriver();

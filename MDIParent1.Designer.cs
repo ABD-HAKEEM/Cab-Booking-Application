@@ -28,35 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.fileMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.File = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.locationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.customerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.driverRegistrationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.carsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.costingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.transuctionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cabBookingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.vehicalAvilabilityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.transuctionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bookingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.customerToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.driverToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.vehicalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.windowsMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.newWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cascadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tileVerticalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tileHorizontalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.closeAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.arrangeIconsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.changeTextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.changeFormsColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.userAccountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Location = new System.Windows.Forms.ToolStripMenuItem();
+            this.Customer_Registration = new System.Windows.Forms.ToolStripMenuItem();
+            this.Driver_Registration = new System.Windows.Forms.ToolStripMenuItem();
+            this.Vehicale_Registration = new System.Windows.Forms.ToolStripMenuItem();
+            this.Costing = new System.Windows.Forms.ToolStripMenuItem();
+            this.Exit = new System.Windows.Forms.ToolStripMenuItem();
+            this.Transactions = new System.Windows.Forms.ToolStripMenuItem();
+            this.Cab_Booking = new System.Windows.Forms.ToolStripMenuItem();
+            this.Vehicle_Availability = new System.Windows.Forms.ToolStripMenuItem();
+            this.Reports = new System.Windows.Forms.ToolStripMenuItem();
+            this.Booking = new System.Windows.Forms.ToolStripMenuItem();
+            this.Customer = new System.Windows.Forms.ToolStripMenuItem();
+            this.Driver = new System.Windows.Forms.ToolStripMenuItem();
+            this.Vehicles = new System.Windows.Forms.ToolStripMenuItem();
+            this.Windows = new System.Windows.Forms.ToolStripMenuItem();
+            this.New_Window = new System.Windows.Forms.ToolStripMenuItem();
+            this.Cascade = new System.Windows.Forms.ToolStripMenuItem();
+            this.Tile_Vertical = new System.Windows.Forms.ToolStripMenuItem();
+            this.Tile_Horizontal = new System.Windows.Forms.ToolStripMenuItem();
+            this.Close_All = new System.Windows.Forms.ToolStripMenuItem();
+            this.Arrange_Icons = new System.Windows.Forms.ToolStripMenuItem();
+            this.Change_Font = new System.Windows.Forms.ToolStripMenuItem();
+            this.Chang_Forms_Color = new System.Windows.Forms.ToolStripMenuItem();
+            this.Settings = new System.Windows.Forms.ToolStripMenuItem();
+            this.User_Groups = new System.Windows.Forms.ToolStripMenuItem();
+            this.Change_Password = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.logs = new System.Windows.Forms.ToolStripStatusLabel();
@@ -67,240 +66,234 @@
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // fileMenu
+            // File
             // 
-            this.fileMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.File.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripSeparator3,
-            this.locationToolStripMenuItem,
-            this.customerToolStripMenuItem,
-            this.driverRegistrationToolStripMenuItem,
-            this.carsToolStripMenuItem,
-            this.costingToolStripMenuItem,
-            this.exitToolStripMenuItem});
-            this.fileMenu.ImageTransparentColor = System.Drawing.SystemColors.ActiveBorder;
-            this.fileMenu.Name = "fileMenu";
-            this.fileMenu.Size = new System.Drawing.Size(79, 38);
-            this.fileMenu.Text = "&File";
-            this.fileMenu.Click += new System.EventHandler(this.fileMenu_Click);
+            this.Location,
+            this.Customer_Registration,
+            this.Driver_Registration,
+            this.Vehicale_Registration,
+            this.Costing,
+            this.Exit});
+            this.File.ImageTransparentColor = System.Drawing.SystemColors.ActiveBorder;
+            this.File.Name = "File";
+            this.File.Size = new System.Drawing.Size(79, 38);
+            this.File.Text = "File";
+            this.File.Click += new System.EventHandler(this.fileMenu_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(454, 6);
             // 
-            // locationToolStripMenuItem
+            // Location
             // 
-            this.locationToolStripMenuItem.Image = global::Cab_Booking_Application.Properties.Resources.marker;
-            this.locationToolStripMenuItem.Name = "locationToolStripMenuItem";
-            this.locationToolStripMenuItem.ShortcutKeyDisplayString = "L";
-            this.locationToolStripMenuItem.Size = new System.Drawing.Size(457, 44);
-            this.locationToolStripMenuItem.Text = "Location";
-            this.locationToolStripMenuItem.Click += new System.EventHandler(this.locationToolStripMenuItem_Click);
+            this.Location.Image = global::Cab_Booking_Application.Properties.Resources.marker;
+            this.Location.Name = "Location";
+            this.Location.ShortcutKeyDisplayString = "L";
+            this.Location.Size = new System.Drawing.Size(457, 44);
+            this.Location.Text = "Location";
+            this.Location.Click += new System.EventHandler(this.locationToolStripMenuItem_Click);
             // 
-            // customerToolStripMenuItem
+            // Customer_Registration
             // 
-            this.customerToolStripMenuItem.Image = global::Cab_Booking_Application.Properties.Resources.user_add;
-            this.customerToolStripMenuItem.Name = "customerToolStripMenuItem";
-            this.customerToolStripMenuItem.ShortcutKeyDisplayString = "C";
-            this.customerToolStripMenuItem.Size = new System.Drawing.Size(457, 44);
-            this.customerToolStripMenuItem.Text = "Customer Registration";
-            this.customerToolStripMenuItem.Click += new System.EventHandler(this.customerToolStripMenuItem_Click);
+            this.Customer_Registration.Image = global::Cab_Booking_Application.Properties.Resources.user_add;
+            this.Customer_Registration.Name = "Customer_Registration";
+            this.Customer_Registration.ShortcutKeyDisplayString = "C";
+            this.Customer_Registration.Size = new System.Drawing.Size(457, 44);
+            this.Customer_Registration.Text = "Customer Registration";
+            this.Customer_Registration.Click += new System.EventHandler(this.customerToolStripMenuItem_Click);
             // 
-            // driverRegistrationToolStripMenuItem
+            // Driver_Registration
             // 
-            this.driverRegistrationToolStripMenuItem.Image = global::Cab_Booking_Application.Properties.Resources.steering_wheel;
-            this.driverRegistrationToolStripMenuItem.Name = "driverRegistrationToolStripMenuItem";
-            this.driverRegistrationToolStripMenuItem.Size = new System.Drawing.Size(457, 44);
-            this.driverRegistrationToolStripMenuItem.Text = "Driver Registration  ";
-            this.driverRegistrationToolStripMenuItem.Click += new System.EventHandler(this.driverRegistrationToolStripMenuItem_Click);
+            this.Driver_Registration.Image = global::Cab_Booking_Application.Properties.Resources.steering_wheel;
+            this.Driver_Registration.Name = "Driver_Registration";
+            this.Driver_Registration.Size = new System.Drawing.Size(457, 44);
+            this.Driver_Registration.Text = "Driver Registration  ";
+            this.Driver_Registration.Click += new System.EventHandler(this.driverRegistrationToolStripMenuItem_Click);
             // 
-            // carsToolStripMenuItem
+            // Vehicale_Registration
             // 
-            this.carsToolStripMenuItem.Image = global::Cab_Booking_Application.Properties.Resources.cars;
-            this.carsToolStripMenuItem.Name = "carsToolStripMenuItem";
-            this.carsToolStripMenuItem.ShortcutKeyDisplayString = "V";
-            this.carsToolStripMenuItem.Size = new System.Drawing.Size(457, 44);
-            this.carsToolStripMenuItem.Text = "Vehicale Registration";
-            this.carsToolStripMenuItem.Click += new System.EventHandler(this.carsToolStripMenuItem_Click);
+            this.Vehicale_Registration.Image = global::Cab_Booking_Application.Properties.Resources.cars;
+            this.Vehicale_Registration.Name = "Vehicale_Registration";
+            this.Vehicale_Registration.ShortcutKeyDisplayString = "V";
+            this.Vehicale_Registration.Size = new System.Drawing.Size(457, 44);
+            this.Vehicale_Registration.Text = "Vehicale Registration";
+            this.Vehicale_Registration.Click += new System.EventHandler(this.carsToolStripMenuItem_Click);
             // 
-            // costingToolStripMenuItem
+            // Costing
             // 
-            this.costingToolStripMenuItem.Image = global::Cab_Booking_Application.Properties.Resources.usd_circle;
-            this.costingToolStripMenuItem.Name = "costingToolStripMenuItem";
-            this.costingToolStripMenuItem.ShortcutKeyDisplayString = "P";
-            this.costingToolStripMenuItem.Size = new System.Drawing.Size(457, 44);
-            this.costingToolStripMenuItem.Text = "Costing";
-            this.costingToolStripMenuItem.Click += new System.EventHandler(this.costingToolStripMenuItem_Click);
+            this.Costing.Image = global::Cab_Booking_Application.Properties.Resources.usd_circle;
+            this.Costing.Name = "Costing";
+            this.Costing.ShortcutKeyDisplayString = "P";
+            this.Costing.Size = new System.Drawing.Size(457, 44);
+            this.Costing.Text = "Costing";
+            this.Costing.Click += new System.EventHandler(this.costingToolStripMenuItem_Click);
             // 
-            // exitToolStripMenuItem
+            // Exit
             // 
-            this.exitToolStripMenuItem.Image = global::Cab_Booking_Application.Properties.Resources.cross_circle;
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(457, 44);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            this.Exit.Image = global::Cab_Booking_Application.Properties.Resources.cross_circle;
+            this.Exit.Name = "Exit";
+            this.Exit.Size = new System.Drawing.Size(457, 44);
+            this.Exit.Text = "Exit";
+            this.Exit.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
-            // transuctionsToolStripMenuItem
+            // Transactions
             // 
-            this.transuctionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cabBookingToolStripMenuItem,
-            this.vehicalAvilabilityToolStripMenuItem});
-            this.transuctionsToolStripMenuItem.Name = "transuctionsToolStripMenuItem";
-            this.transuctionsToolStripMenuItem.Size = new System.Drawing.Size(198, 38);
-            this.transuctionsToolStripMenuItem.Text = "&Transactions ";
+            this.Transactions.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Cab_Booking,
+            this.Vehicle_Availability});
+            this.Transactions.Name = "Transactions";
+            this.Transactions.Size = new System.Drawing.Size(198, 38);
+            this.Transactions.Text = "&Transactions ";
             // 
-            // cabBookingToolStripMenuItem
+            // Cab_Booking
             // 
-            this.cabBookingToolStripMenuItem.Name = "cabBookingToolStripMenuItem";
-            this.cabBookingToolStripMenuItem.Size = new System.Drawing.Size(391, 44);
-            this.cabBookingToolStripMenuItem.Text = "Cab Booking";
-            this.cabBookingToolStripMenuItem.Click += new System.EventHandler(this.cabBookingToolStripMenuItem_Click);
+            this.Cab_Booking.Name = "Cab_Booking";
+            this.Cab_Booking.Size = new System.Drawing.Size(385, 44);
+            this.Cab_Booking.Text = "Cab Booking";
+            this.Cab_Booking.Click += new System.EventHandler(this.cabBookingToolStripMenuItem_Click);
             // 
-            // vehicalAvilabilityToolStripMenuItem
+            // Vehicle_Availability
             // 
-            this.vehicalAvilabilityToolStripMenuItem.Name = "vehicalAvilabilityToolStripMenuItem";
-            this.vehicalAvilabilityToolStripMenuItem.Size = new System.Drawing.Size(391, 44);
-            this.vehicalAvilabilityToolStripMenuItem.Text = "Vehicle Availability ";
-            this.vehicalAvilabilityToolStripMenuItem.Click += new System.EventHandler(this.vehicalAvilabilityToolStripMenuItem_Click);
+            this.Vehicle_Availability.BackColor = System.Drawing.Color.White;
+            this.Vehicle_Availability.Name = "Vehicle_Availability";
+            this.Vehicle_Availability.Size = new System.Drawing.Size(385, 44);
+            this.Vehicle_Availability.Text = "Vehicle Availability";
+            this.Vehicle_Availability.Click += new System.EventHandler(this.vehicalAvilabilityToolStripMenuItem_Click);
             // 
-            // reportsToolStripMenuItem
+            // Reports
             // 
-            this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.transuctionToolStripMenuItem,
-            this.bookingToolStripMenuItem,
-            this.customerToolStripMenuItem1,
-            this.driverToolStripMenuItem1,
-            this.vehicalToolStripMenuItem});
-            this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
-            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(131, 38);
-            this.reportsToolStripMenuItem.Text = "&Reports";
+            this.Reports.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Booking,
+            this.Customer,
+            this.Driver,
+            this.Vehicles});
+            this.Reports.Name = "Reports";
+            this.Reports.Size = new System.Drawing.Size(131, 38);
+            this.Reports.Text = "&Reports";
             // 
-            // transuctionToolStripMenuItem
+            // Booking
             // 
-            this.transuctionToolStripMenuItem.Name = "transuctionToolStripMenuItem";
-            this.transuctionToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
-            this.transuctionToolStripMenuItem.Text = "Transuction";
-            this.transuctionToolStripMenuItem.Click += new System.EventHandler(this.transuctionToolStripMenuItem_Click);
+            this.Booking.Name = "Booking";
+            this.Booking.Size = new System.Drawing.Size(359, 44);
+            this.Booking.Text = "Booking ";
+            this.Booking.Click += new System.EventHandler(this.Booking_Click);
             // 
-            // bookingToolStripMenuItem
+            // Customer
             // 
-            this.bookingToolStripMenuItem.Name = "bookingToolStripMenuItem";
-            this.bookingToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
-            this.bookingToolStripMenuItem.Text = "Booking ";
+            this.Customer.Name = "Customer";
+            this.Customer.Size = new System.Drawing.Size(359, 44);
+            this.Customer.Text = "Customer";
             // 
-            // customerToolStripMenuItem1
+            // Driver
             // 
-            this.customerToolStripMenuItem1.Name = "customerToolStripMenuItem1";
-            this.customerToolStripMenuItem1.Size = new System.Drawing.Size(359, 44);
-            this.customerToolStripMenuItem1.Text = "Customer";
+            this.Driver.Name = "Driver";
+            this.Driver.Size = new System.Drawing.Size(359, 44);
+            this.Driver.Text = "Driver";
             // 
-            // driverToolStripMenuItem1
+            // Vehicles
             // 
-            this.driverToolStripMenuItem1.Name = "driverToolStripMenuItem1";
-            this.driverToolStripMenuItem1.Size = new System.Drawing.Size(359, 44);
-            this.driverToolStripMenuItem1.Text = "Driver";
+            this.Vehicles.Name = "Vehicles";
+            this.Vehicles.Size = new System.Drawing.Size(359, 44);
+            this.Vehicles.Text = "Vehicles ";
+            this.Vehicles.Click += new System.EventHandler(this.vehicalToolStripMenuItem_Click);
             // 
-            // vehicalToolStripMenuItem
+            // Windows
             // 
-            this.vehicalToolStripMenuItem.Name = "vehicalToolStripMenuItem";
-            this.vehicalToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
-            this.vehicalToolStripMenuItem.Text = "Vehicles ";
-            this.vehicalToolStripMenuItem.Click += new System.EventHandler(this.vehicalToolStripMenuItem_Click);
+            this.Windows.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.New_Window,
+            this.Cascade,
+            this.Tile_Vertical,
+            this.Tile_Horizontal,
+            this.Close_All,
+            this.Arrange_Icons,
+            this.Change_Font,
+            this.Chang_Forms_Color});
+            this.Windows.Name = "Windows";
+            this.Windows.Size = new System.Drawing.Size(148, 38);
+            this.Windows.Text = "&Windows";
             // 
-            // windowsMenu
+            // New_Window
             // 
-            this.windowsMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newWindowToolStripMenuItem,
-            this.cascadeToolStripMenuItem,
-            this.tileVerticalToolStripMenuItem,
-            this.tileHorizontalToolStripMenuItem,
-            this.closeAllToolStripMenuItem,
-            this.arrangeIconsToolStripMenuItem,
-            this.changeTextToolStripMenuItem,
-            this.changeFormsColorToolStripMenuItem});
-            this.windowsMenu.Name = "windowsMenu";
-            this.windowsMenu.Size = new System.Drawing.Size(148, 38);
-            this.windowsMenu.Text = "&Windows";
+            this.New_Window.Name = "New_Window";
+            this.New_Window.Size = new System.Drawing.Size(396, 44);
+            this.New_Window.Text = "New Window";
+            this.New_Window.Click += new System.EventHandler(this.ShowNewForm);
             // 
-            // newWindowToolStripMenuItem
+            // Cascade
             // 
-            this.newWindowToolStripMenuItem.Name = "newWindowToolStripMenuItem";
-            this.newWindowToolStripMenuItem.Size = new System.Drawing.Size(396, 44);
-            this.newWindowToolStripMenuItem.Text = "New Window";
-            this.newWindowToolStripMenuItem.Click += new System.EventHandler(this.ShowNewForm);
+            this.Cascade.Name = "Cascade";
+            this.Cascade.Size = new System.Drawing.Size(396, 44);
+            this.Cascade.Text = "Cascade";
+            this.Cascade.Click += new System.EventHandler(this.CascadeToolStripMenuItem_Click);
             // 
-            // cascadeToolStripMenuItem
+            // Tile_Vertical
             // 
-            this.cascadeToolStripMenuItem.Name = "cascadeToolStripMenuItem";
-            this.cascadeToolStripMenuItem.Size = new System.Drawing.Size(396, 44);
-            this.cascadeToolStripMenuItem.Text = "Cascade";
-            this.cascadeToolStripMenuItem.Click += new System.EventHandler(this.CascadeToolStripMenuItem_Click);
+            this.Tile_Vertical.Name = "Tile_Vertical";
+            this.Tile_Vertical.Size = new System.Drawing.Size(396, 44);
+            this.Tile_Vertical.Text = "Tile &Vertical";
+            this.Tile_Vertical.Click += new System.EventHandler(this.TileVerticalToolStripMenuItem_Click);
             // 
-            // tileVerticalToolStripMenuItem
+            // Tile_Horizontal
             // 
-            this.tileVerticalToolStripMenuItem.Name = "tileVerticalToolStripMenuItem";
-            this.tileVerticalToolStripMenuItem.Size = new System.Drawing.Size(396, 44);
-            this.tileVerticalToolStripMenuItem.Text = "Tile &Vertical";
-            this.tileVerticalToolStripMenuItem.Click += new System.EventHandler(this.TileVerticalToolStripMenuItem_Click);
+            this.Tile_Horizontal.Name = "Tile_Horizontal";
+            this.Tile_Horizontal.Size = new System.Drawing.Size(396, 44);
+            this.Tile_Horizontal.Text = "Tile &Horizontal";
+            this.Tile_Horizontal.Click += new System.EventHandler(this.TileHorizontalToolStripMenuItem_Click);
             // 
-            // tileHorizontalToolStripMenuItem
+            // Close_All
             // 
-            this.tileHorizontalToolStripMenuItem.Name = "tileHorizontalToolStripMenuItem";
-            this.tileHorizontalToolStripMenuItem.Size = new System.Drawing.Size(396, 44);
-            this.tileHorizontalToolStripMenuItem.Text = "Tile &Horizontal";
-            this.tileHorizontalToolStripMenuItem.Click += new System.EventHandler(this.TileHorizontalToolStripMenuItem_Click);
+            this.Close_All.Name = "Close_All";
+            this.Close_All.Size = new System.Drawing.Size(396, 44);
+            this.Close_All.Text = "Close All";
+            this.Close_All.Click += new System.EventHandler(this.CloseAllToolStripMenuItem_Click);
             // 
-            // closeAllToolStripMenuItem
+            // Arrange_Icons
             // 
-            this.closeAllToolStripMenuItem.Name = "closeAllToolStripMenuItem";
-            this.closeAllToolStripMenuItem.Size = new System.Drawing.Size(396, 44);
-            this.closeAllToolStripMenuItem.Text = "Close All";
-            this.closeAllToolStripMenuItem.Click += new System.EventHandler(this.CloseAllToolStripMenuItem_Click);
+            this.Arrange_Icons.Name = "Arrange_Icons";
+            this.Arrange_Icons.Size = new System.Drawing.Size(396, 44);
+            this.Arrange_Icons.Text = "Arrange Icons";
+            this.Arrange_Icons.Click += new System.EventHandler(this.ArrangeIconsToolStripMenuItem_Click);
             // 
-            // arrangeIconsToolStripMenuItem
+            // Change_Font
             // 
-            this.arrangeIconsToolStripMenuItem.Name = "arrangeIconsToolStripMenuItem";
-            this.arrangeIconsToolStripMenuItem.Size = new System.Drawing.Size(396, 44);
-            this.arrangeIconsToolStripMenuItem.Text = "Arrange Icons";
-            this.arrangeIconsToolStripMenuItem.Click += new System.EventHandler(this.ArrangeIconsToolStripMenuItem_Click);
+            this.Change_Font.Name = "Change_Font";
+            this.Change_Font.Size = new System.Drawing.Size(396, 44);
+            this.Change_Font.Text = "Change Font";
+            this.Change_Font.Click += new System.EventHandler(this.changeTextToolStripMenuItem_Click);
             // 
-            // changeTextToolStripMenuItem
+            // Chang_Forms_Color
             // 
-            this.changeTextToolStripMenuItem.Name = "changeTextToolStripMenuItem";
-            this.changeTextToolStripMenuItem.Size = new System.Drawing.Size(396, 44);
-            this.changeTextToolStripMenuItem.Text = "Change Font";
-            this.changeTextToolStripMenuItem.Click += new System.EventHandler(this.changeTextToolStripMenuItem_Click);
+            this.Chang_Forms_Color.Image = global::Cab_Booking_Application.Properties.Resources.icons8_feather_64;
+            this.Chang_Forms_Color.Name = "Chang_Forms_Color";
+            this.Chang_Forms_Color.Size = new System.Drawing.Size(396, 44);
+            this.Chang_Forms_Color.Text = "Change Forms Color";
+            this.Chang_Forms_Color.Click += new System.EventHandler(this.changeFormsColorToolStripMenuItem_Click);
             // 
-            // changeFormsColorToolStripMenuItem
+            // Settings
             // 
-            this.changeFormsColorToolStripMenuItem.Image = global::Cab_Booking_Application.Properties.Resources.icons8_feather_64;
-            this.changeFormsColorToolStripMenuItem.Name = "changeFormsColorToolStripMenuItem";
-            this.changeFormsColorToolStripMenuItem.Size = new System.Drawing.Size(396, 44);
-            this.changeFormsColorToolStripMenuItem.Text = "Change Forms Color";
-            this.changeFormsColorToolStripMenuItem.Click += new System.EventHandler(this.changeFormsColorToolStripMenuItem_Click);
+            this.Settings.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.User_Groups,
+            this.Change_Password});
+            this.Settings.Name = "Settings";
+            this.Settings.Size = new System.Drawing.Size(132, 38);
+            this.Settings.Text = "Settings";
             // 
-            // settingsToolStripMenuItem
+            // User_Groups
             // 
-            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.userAccountToolStripMenuItem,
-            this.changePasswordToolStripMenuItem});
-            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(132, 38);
-            this.settingsToolStripMenuItem.Text = "Settings";
+            this.User_Groups.Name = "User_Groups";
+            this.User_Groups.Size = new System.Drawing.Size(366, 44);
+            this.User_Groups.Text = "User Groups";
+            this.User_Groups.Click += new System.EventHandler(this.userAccountToolStripMenuItem_Click);
             // 
-            // userAccountToolStripMenuItem
+            // Change_Password
             // 
-            this.userAccountToolStripMenuItem.Name = "userAccountToolStripMenuItem";
-            this.userAccountToolStripMenuItem.Size = new System.Drawing.Size(366, 44);
-            this.userAccountToolStripMenuItem.Text = "User Groups";
-            this.userAccountToolStripMenuItem.Click += new System.EventHandler(this.userAccountToolStripMenuItem_Click);
-            // 
-            // changePasswordToolStripMenuItem
-            // 
-            this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
-            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(366, 44);
-            this.changePasswordToolStripMenuItem.Text = "Change Password";
-            this.changePasswordToolStripMenuItem.Click += new System.EventHandler(this.changePasswordToolStripMenuItem_Click);
+            this.Change_Password.Name = "Change_Password";
+            this.Change_Password.Size = new System.Drawing.Size(366, 44);
+            this.Change_Password.Text = "Change Password";
+            this.Change_Password.Click += new System.EventHandler(this.changePasswordToolStripMenuItem_Click);
             // 
             // menuStrip
             // 
@@ -308,13 +301,13 @@
             this.menuStrip.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileMenu,
-            this.transuctionsToolStripMenuItem,
-            this.reportsToolStripMenuItem,
-            this.windowsMenu,
-            this.settingsToolStripMenuItem});
+            this.File,
+            this.Transactions,
+            this.Reports,
+            this.Windows,
+            this.Settings});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip.MdiWindowListItem = this.windowsMenu;
+            this.menuStrip.MdiWindowListItem = this.Windows;
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Padding = new System.Windows.Forms.Padding(16, 5, 0, 5);
             this.menuStrip.Size = new System.Drawing.Size(1686, 48);
@@ -415,41 +408,40 @@
         }
         #endregion
         private System.Windows.Forms.ToolStripStatusLabel log;
-        private System.Windows.Forms.ToolStripMenuItem fileMenu;
+        private System.Windows.Forms.ToolStripMenuItem File;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripMenuItem locationToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem customerToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem carsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem costingToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem transuctionsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cabBookingToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem vehicalAvilabilityToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem transuctionToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem bookingToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem customerToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem driverToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem vehicalToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem windowsMenu;
-        private System.Windows.Forms.ToolStripMenuItem newWindowToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cascadeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tileVerticalToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tileHorizontalToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem closeAllToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem arrangeIconsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
-        public System.Windows.Forms.ToolStripMenuItem userAccountToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem changePasswordToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem Location;
+        private System.Windows.Forms.ToolStripMenuItem Customer_Registration;
+        private System.Windows.Forms.ToolStripMenuItem Vehicale_Registration;
+        private System.Windows.Forms.ToolStripMenuItem Costing;
+        private System.Windows.Forms.ToolStripMenuItem Exit;
+        private System.Windows.Forms.ToolStripMenuItem Transactions;
+        private System.Windows.Forms.ToolStripMenuItem Cab_Booking;
+        private System.Windows.Forms.ToolStripMenuItem Reports;
+        private System.Windows.Forms.ToolStripMenuItem Booking;
+        private System.Windows.Forms.ToolStripMenuItem Customer;
+        private System.Windows.Forms.ToolStripMenuItem Driver;
+        private System.Windows.Forms.ToolStripMenuItem Vehicles;
+        private System.Windows.Forms.ToolStripMenuItem Windows;
+        private System.Windows.Forms.ToolStripMenuItem New_Window;
+        private System.Windows.Forms.ToolStripMenuItem Cascade;
+        private System.Windows.Forms.ToolStripMenuItem Tile_Vertical;
+        private System.Windows.Forms.ToolStripMenuItem Tile_Horizontal;
+        private System.Windows.Forms.ToolStripMenuItem Close_All;
+        private System.Windows.Forms.ToolStripMenuItem Arrange_Icons;
+        private System.Windows.Forms.ToolStripMenuItem Settings;
+        public System.Windows.Forms.ToolStripMenuItem User_Groups;
+        private System.Windows.Forms.ToolStripMenuItem Change_Password;
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel logs;
-        private System.Windows.Forms.ToolStripMenuItem changeTextToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem changeFormsColorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem Change_Font;
+        private System.Windows.Forms.ToolStripMenuItem Chang_Forms_Color;
         private System.Windows.Forms.ToolStripStatusLabel logs2;
-        private System.Windows.Forms.ToolStripMenuItem driverRegistrationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem Driver_Registration;
         private System.Windows.Forms.ToolStripStatusLabel Regno;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripMenuItem Vehicle_Availability;
     }
 }
 

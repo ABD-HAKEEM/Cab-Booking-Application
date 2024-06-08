@@ -34,7 +34,7 @@ namespace Cab_Booking_Application
         public string E_Start { get; set; }
         public string E_End { get; set; }
         public string Image { get; set; }
-        
+
 
         // Constructor
         public Car(string carName, string serial, string registration, string engine, string grade, string mileage, string fuel, string type, string brand, string model, string color, string transmission, string seat, string options, string remarks, string driverId, int withDriver, int active, string lStart, string lEnd, string iStart, string iEnd, string eStart, string eEnd, string image)
@@ -128,7 +128,7 @@ namespace Cab_Booking_Application
         }
 
 
-        public static List<Car> GetCarsByVehicle(string vehicleNumber, string vehicleBrand ,SqlConnection conn)
+        public static List<Car> GetCarsByVehicle(string vehicleNumber, string vehicleBrand, SqlConnection conn)
         {
             List<Car> cars = new List<Car>();
             string query = "SELECT Pict1, VehNo, chassis, RegNo, engincc, Grade, Mileage, Fuel, Type, brand, Model, Color, Transmission, Seat, Options, Remarks," +
@@ -139,7 +139,7 @@ namespace Cab_Booking_Application
 
 
             using (SqlCommand command = new SqlCommand(query, conn))
-                {
+            {
                 if (string.IsNullOrEmpty(vehicleNumber))
                 {
                     command.Parameters.AddWithValue("@vehNo", DBNull.Value);
@@ -207,7 +207,7 @@ namespace Cab_Booking_Application
         }
     }
 
-    
+
 
     /*  public class CarAvl
       {

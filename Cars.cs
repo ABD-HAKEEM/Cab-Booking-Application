@@ -81,6 +81,8 @@ namespace Cab_Booking_Application
                     Vehbox.Items.Add(vehDisplayText);
                 }
             }
+
+
         }
 
 
@@ -227,6 +229,8 @@ namespace Cab_Booking_Application
             optiontxt.Text = "";
             Remark.Text = "";
             listView1.Items.Clear();
+            Vehbox.Text = "";
+
 
         }
 
@@ -265,7 +269,7 @@ namespace Cab_Booking_Application
                     command2.Parameters.AddWithValue("@insstr", insstr.Text);
                     command2.Parameters.AddWithValue("@insend", insend.Text);
                     command2.Parameters.AddWithValue("@emistr", emistr.Text);
-                    command2.Parameters.AddWithValue("@emiend", insend.Text); 
+                    command2.Parameters.AddWithValue("@emiend", insend.Text);
                     command2.Parameters.AddWithValue("@Driverbox", Drivebox.SelectedItem?.ToString());
                     command2.Parameters.AddWithValue("@withdrv", withdrv.Checked);
                     command2.Parameters.AddWithValue("@Active", InActive.Checked);
@@ -295,14 +299,61 @@ namespace Cab_Booking_Application
                 {
                     MessageBox.Show("Error: " + ex.Message);
                 }
-               
+
             }
         }
 
 
+        /*  private void savbtn_Click(object sender, EventArgs e)
+          {
+              string listViewItems = "";
+              foreach (ListViewItem item in listView1.SelectedItems)
+              {
+                  listViewItems += item.Text + ";"; 
+              }
+              try
+              {
+
+                  Admin.Admin_AddCar admin_AddCar = new Admin.Admin_AddCar(
+                      vehNo: Carnam1.Text,
+                      chassis: Serialnotxt.Text,
+                      regNo: rginotxt.Text,
+                      engincc: engcctxt.Text,
+                      grade: grdtxt.Text,
+                      mileage: maitxt.Text,
+                      fuel: fuel.SelectedItem?.ToString(),
+                      type: typ.SelectedItem?.ToString(),
+                      brand: bran.SelectedItem?.ToString(),
+                      model: modletxt.Text,
+                      color: colorbox.SelectedItem?.ToString(),
+                      transmission: trnbox.SelectedItem?.ToString(),
+                      seat: seattxt.Text,
+                      options: optiontxt.Text,
+                      remarks: Remark.Text,
+                      lstart: licst.Text,
+                      lEnd: licend.Text,
+                      istart: insstr.Text,
+                      iEnd: insend.Text,
+                      estart: emistr.Text,
+                      eEnd: emiend.Text,
+                      driID: Drivebox.SelectedItem?.ToString(),
+                      withDrv: withdrv.Checked,
+                      inactive: InActive.Checked,
+                      listView1: listViewItems
+                  );
 
 
+                  admin_AddCar.AddCar();
 
+
+              }
+              catch (Exception ex)
+              {
+                  // Handle exceptions appropriately
+                  MessageBox.Show("An error occurred while inserting vehicle data: " + ex.Message);
+              }
+          }
+  */
         private void Vehbox_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedVehicle = Vehbox.SelectedItem.ToString();
@@ -348,7 +399,28 @@ namespace Cab_Booking_Application
 
         private void Drivebox_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string selectedVehicle = Vehbox.SelectedItem.ToString();
+                string[] parts = selectedVehicle.Split('-');
+                string vehNo = parts[0].Trim();
+
+                Admin.Admin_CarRM adminCarRM = new Admin.Admin_CarRM(vehNo);
+                adminCarRM.RmCar();
+                Clrbtn_Click(sender, new EventArgs());
+
+                MessageBox.Show("Car removed successfully.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while removing car: " + ex.Message);
+            }
+        }
+
     }
 }

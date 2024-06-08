@@ -90,7 +90,7 @@ namespace Cab_Booking_Application
                         {
                             command.Parameters.AddWithValue("@type", comboBox1.SelectedItem?.ToString());
                             command.ExecuteNonQuery();
-                           
+
                         }
                         unsele_Click(this, EventArgs.Empty);
                     }

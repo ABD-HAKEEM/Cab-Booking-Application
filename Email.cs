@@ -2,7 +2,6 @@
 using System.Data.SqlClient;
 using System.Net;
 using System.Net.Mail;
-using System.Net.Mime;
 
 namespace Cab_Booking_Application
 {
@@ -22,7 +21,7 @@ namespace Cab_Booking_Application
         public string Veh_ID { get; set; }
         public string EmailAddress { get; set; }
 
-        public Email(string id, string cust_Name, string date, string order_Id, string cost, string start_Date, string end_Date, string from_Loc, string to_Loc, string veh_ID,string email)
+        public Email(string id, string cust_Name, string date, string order_Id, string cost, string start_Date, string end_Date, string from_Loc, string to_Loc, string veh_ID, string email)
         {
             Id = id;
             Cust_Name = cust_Name;
@@ -195,13 +194,13 @@ namespace Cab_Booking_Application
 </body>
 </html>";
 
-            
+
             return htmlTemplate;
 
             //Customer Name: " + Cust_Name + @"
 
             return string.Format(htmlTemplate, Order_Id, Date, Cust_Name, Cost, Veh_ID, From_Loc, To_Loc, Start_Date, End_Date, Id);
-       
+
         }
 
         public void SendEmailToCustomer(string email)
@@ -221,7 +220,7 @@ namespace Cab_Booking_Application
                 MailMessage myMail = new MailMessage(from, to);
 
                 // add ReplyTo
-                MailAddress replyTo = new MailAddress("auto@gosmart.lk");
+                MailAddress replyTo = new MailAddress("hakeemfareed@gosmart.lk");
                 myMail.ReplyToList.Add(replyTo);
 
                 myMail.Subject = "Your Invoice" + "-" + Order_Id;

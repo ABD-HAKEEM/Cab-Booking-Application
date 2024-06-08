@@ -1,16 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.SqlClient;
-using System.Net;
-using System.Net.Mail;
-using System.IO;
+using System.Windows.Forms;
 
 namespace Cab_Booking_Application
 {
@@ -20,7 +11,7 @@ namespace Cab_Booking_Application
         SqlConnection conn;
         public string Username_log { get; set; }
         public string RegNum { get; set; }
-       
+
         public Cabbooking()
         {
             InitializeComponent();
@@ -43,7 +34,7 @@ namespace Cab_Booking_Application
         {
 
         }
-       
+
         private void Reports_Load(object sender, EventArgs e)
         {
             Order order = new Order(
@@ -57,7 +48,7 @@ namespace Cab_Booking_Application
 
             conn = DBconnection.ConnectToDB();
 
-           
+
             Date.ReadOnly = true;
             VehNumber.ReadOnly = true;
             maitxt.ReadOnly = true;
@@ -69,7 +60,7 @@ namespace Cab_Booking_Application
             cusName.ReadOnly = true;
             Emailtxt.ReadOnly = true;
             Date.ReadOnly = true;
-           Orderid.ReadOnly = true;
+            Orderid.ReadOnly = true;
 
             string query = "SELECT Description FROM Location WHERE Location.ststus = '0'";
 
@@ -360,7 +351,7 @@ namespace Cab_Booking_Application
                 MessageBox.Show("Failed to place order. Error: " + ex.Message);
             }
 
-           
+
 
         }
 
@@ -377,7 +368,7 @@ namespace Cab_Booking_Application
             {
                 string emailadd = Emailtxt.Text;
                 // Create an email object with order details
-                
+
                 Email email = new Email
                 (
                     id: custId.Text, // Ensure the order of parameters matches the constructor
@@ -390,8 +381,8 @@ namespace Cab_Booking_Application
                     from_Loc: locstar.Text,
                     to_Loc: locto.Text,
                     veh_ID: Vehbox.Text,
-                    email:emailadd
-                    
+                    email: emailadd
+
                 );
 
                 // Send email to customer
