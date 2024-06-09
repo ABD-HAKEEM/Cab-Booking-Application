@@ -260,7 +260,7 @@ namespace Cab_Booking_Application
                     {
                         if (endDate >= startDate)
                         {
-                            string query = @"SELECT VehNo FROM Vehicalmas WHERE VehNo NOT IN  (SELECT DISTINCT VehID FROM Cab_booking WHERE Cab_booking.Start_date <= @EndDate AND Cab_booking.end_date >= @StartDate)";
+                            string query = "SELECT VehNo FROM Vehicalmas WHERE VehNo NOT IN  (SELECT DISTINCT VehID FROM Cab_booking WHERE Cab_booking.Start_date <= @EndDate AND Cab_booking.end_date >= @StartDate)";
 
                             using (SqlCommand command = new SqlCommand(query, conn))
                             {

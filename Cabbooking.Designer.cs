@@ -63,7 +63,6 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.Withdrv = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.label17 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.locto = new System.Windows.Forms.ComboBox();
             this.locstar = new System.Windows.Forms.ComboBox();
@@ -90,6 +89,7 @@
             this.check = new System.Windows.Forms.Button();
             this.savebut = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label17 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox10.SuspendLayout();
             this.groupBox9.SuspendLayout();
@@ -445,18 +445,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label17.Location = new System.Drawing.Point(13, 574);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(0, 37);
-            this.label17.TabIndex = 3;
-            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label17.Click += new System.EventHandler(this.label17_Click);
-            // 
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.locto);
@@ -697,6 +685,18 @@
             this.savebut.UseVisualStyleBackColor = true;
             this.savebut.Click += new System.EventHandler(this.savebut_Click);
             // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label17.Location = new System.Drawing.Point(13, 574);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(0, 37);
+            this.label17.TabIndex = 3;
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label17.Click += new System.EventHandler(this.label17_Click);
+            // 
             // Cabbooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -793,10 +793,10 @@
         private System.Windows.Forms.TextBox Fuel;
         private System.Windows.Forms.TextBox Type;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.CheckBox Withdrv;
         private System.Windows.Forms.TextBox Emailtxt;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label17;
     }
 }

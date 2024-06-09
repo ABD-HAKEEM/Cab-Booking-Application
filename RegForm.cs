@@ -96,7 +96,7 @@ namespace Cab_Booking_Application
 
 
                 // SQL query to insert data into the Customer table
-                string insertdata = "INSERT INTO Customer (RegNo, F_Name, L_Name, Email, DOB, gender, typ, id_no, address) VALUES (@regtxt, @Firstname, @Lastname, @emailtxt, @Dob, @genderbox, @Typ, @idtxt, @Addtxt)";
+                string insertdata = "INSERT INTO Customer (RegNo, F_Name, L_Name, Email, DOB, gender, typ, id_no, address,Contectno) VALUES (@regtxt, @Firstname, @Lastname, @emailtxt, @Dob, @genderbox, @Typ, @idtxt, @Addtxt,@Conum)";
                 string insertusr = "INSERT INTO user_mas (Users, password, Pw_2, RegNo,grp,Status) VALUES (@usrnam, @pass, @pass2, @regtxt,@typ,0)";
 
                 // Create SqlCommand objects with the insert queries and the existing connection
@@ -111,6 +111,7 @@ namespace Cab_Booking_Application
                         command1.Parameters.AddWithValue("@Firstname", Firstname.Text);
                         command1.Parameters.AddWithValue("@Lastname", Lastname.Text);
                         command1.Parameters.AddWithValue("@emailtxt", emailtxt.Text);
+                        command1.Parameters.AddWithValue("@Conum", Conum.Text);
                         if (genderbox.SelectedItem != null)
                         {
                             command1.Parameters.AddWithValue("@genderbox", genderbox.SelectedItem.ToString());

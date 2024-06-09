@@ -186,6 +186,7 @@
             this.Customer.Name = "Customer";
             this.Customer.Size = new System.Drawing.Size(359, 44);
             this.Customer.Text = "Customer";
+            this.Customer.Click += new System.EventHandler(this.Customer_Click);
             // 
             // Driver
             // 

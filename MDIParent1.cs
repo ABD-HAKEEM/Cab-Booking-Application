@@ -319,6 +319,7 @@ namespace Cab_Booking_Application
 
 
             Report f1 = new Report();
+            f1.MdiParent = this;
             f1.Veh_Report = "VehicaleRpt";
             f1.Text= "Vehicale";
             f1.Show();
@@ -333,8 +334,18 @@ namespace Cab_Booking_Application
         private void Booking_Click(object sender, EventArgs e)
         {
             Report f1 =new Report();
+            f1.MdiParent = this;
             f1.Ordr_Report = "OrderRpt";
             f1.Text = "Order Report";
+            f1.Show();
+        }
+
+        private void Customer_Click(object sender, EventArgs e)
+        {
+            Report f1 = new Report();
+            f1.MdiParent = this;
+            f1.cust_report = "CustomerRpt";
+            f1.Text = "Customer Report";
             f1.Show();
         }
     }

@@ -58,6 +58,8 @@
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.Conum = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -187,7 +189,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(21, 375);
+            this.label8.Location = new System.Drawing.Point(21, 411);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(91, 25);
             this.label8.TabIndex = 17;
@@ -195,10 +197,10 @@
             // 
             // Addtxt
             // 
-            this.Addtxt.Location = new System.Drawing.Point(163, 372);
+            this.Addtxt.Location = new System.Drawing.Point(163, 411);
             this.Addtxt.Multiline = true;
             this.Addtxt.Name = "Addtxt";
-            this.Addtxt.Size = new System.Drawing.Size(464, 119);
+            this.Addtxt.Size = new System.Drawing.Size(464, 80);
             this.Addtxt.TabIndex = 18;
             // 
             // label9
@@ -322,6 +324,8 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.Conum);
+            this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.genderbox);
             this.groupBox1.Controls.Add(this.idtxt);
             this.groupBox1.Controls.Add(this.label9);
@@ -360,6 +364,23 @@
             this.groupBox2.Size = new System.Drawing.Size(638, 109);
             this.groupBox2.TabIndex = 32;
             this.groupBox2.TabStop = false;
+            // 
+            // Conum
+            // 
+            this.Conum.Location = new System.Drawing.Point(163, 362);
+            this.Conum.Multiline = true;
+            this.Conum.Name = "Conum";
+            this.Conum.Size = new System.Drawing.Size(464, 31);
+            this.Conum.TabIndex = 26;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(21, 368);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(124, 25);
+            this.label13.TabIndex = 25;
+            this.label13.Text = "CO Number";
             // 
             // regfrm
             // 
@@ -418,5 +439,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox Conum;
+        private System.Windows.Forms.Label label13;
     }
 }
