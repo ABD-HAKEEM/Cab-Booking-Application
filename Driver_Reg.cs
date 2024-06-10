@@ -44,7 +44,7 @@ namespace Cab_Booking_Application
                   type: Typ.Text,
                   iDNumber: idtxt.Text,
                   address: Addtxt.Text,
-                  telNumber: Teltxt.Text.ToString() == "1",
+                  telNumber: Teltxt.Text,
                   username: usrnam.Text,
                   password: pass.Text
 
@@ -149,6 +149,27 @@ namespace Cab_Booking_Application
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void delbut_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string selectedVehicle = Regbox.SelectedItem.ToString();
+                string[] parts = selectedVehicle.Split('-');
+                string vehNo = parts[0].Trim();
+
+                Admin.Admin_DrvRM admindrvRM = new Admin.Admin_DrvRM(vehNo);
+                admindrvRM.RmDrv();
+                Clrbtn_Click(sender, new EventArgs());
+                Driver_Reg_Load(sender, new EventArgs());
+
+                MessageBox.Show("Car removed successfully.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while removing car: " + ex.Message);
+            }
         }
     }
 

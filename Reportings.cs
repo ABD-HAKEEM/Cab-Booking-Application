@@ -20,7 +20,7 @@ namespace Cab_Booking_Application
         public string IdNumber { get; set; }
         public string Address { get; set; }
         public string ContactNumber { get; set; }
-        public decimal Total_Amount { get; set; }
+        public string Total_Amount { get; set; }
 
         // Constructor for Order details
         public Reports(string id, DateTime orderDate, decimal amount)
@@ -31,7 +31,7 @@ namespace Cab_Booking_Application
         }
 
         // Constructor for Customer details
-        public Reports(string regNo, string firstName, string lastName, string email, DateTime dob, string idNumber, string address, string contactNumber,decimal total_amount)
+        public Reports(string regNo, string firstName, string lastName, string email, DateTime dob, string idNumber, string address, string contactNumber,string total_amount)
         {
             RegNo = regNo;
             FirstName = firstName;
@@ -97,9 +97,9 @@ namespace Cab_Booking_Application
                         string idNumber = reader["id_no"].ToString();
                         string address = reader["address"].ToString();
                         string contactNumber = reader["Contectno"].ToString();
-                        decimal totalAmount = reader["TotalAmount"] != DBNull.Value ? Convert.ToDecimal(reader["TotalAmount"]) : 0m;
+                        string totalAmount = reader["TotalAmount"] != DBNull.Value ? Convert.ToDecimal(reader["TotalAmount"]).ToString("#,##0.00") : "";
 
-                       
+
                         // Populate customer details
                         Reports customer = new Reports(regNo, firstName, lastName, email, dob, idNumber, address, contactNumber, totalAmount);
                         customerDetails.Add(customer);

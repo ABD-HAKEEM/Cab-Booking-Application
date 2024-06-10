@@ -47,6 +47,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.Vehbox = new System.Windows.Forms.ComboBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.DriverDet = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.datebut = new System.Windows.Forms.DateTimePicker();
             this.Date = new System.Windows.Forms.TextBox();
@@ -63,6 +64,7 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.Withdrv = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.locto = new System.Windows.Forms.ComboBox();
             this.locstar = new System.Windows.Forms.ComboBox();
@@ -89,7 +91,6 @@
             this.check = new System.Windows.Forms.Button();
             this.savebut = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label17 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox10.SuspendLayout();
             this.groupBox9.SuspendLayout();
@@ -105,6 +106,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.BackgroundImage = global::Cab_Booking_Application.Properties.Resources.Taxi_background;
             this.groupBox1.Controls.Add(this.groupBox10);
             this.groupBox1.Controls.Add(this.groupBox9);
             this.groupBox1.Controls.Add(this.groupBox8);
@@ -273,6 +275,7 @@
             // 
             // groupBox8
             // 
+            this.groupBox8.Controls.Add(this.DriverDet);
             this.groupBox8.Controls.Add(this.comboBox1);
             this.groupBox8.Controls.Add(this.datebut);
             this.groupBox8.Controls.Add(this.Date);
@@ -286,6 +289,14 @@
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Order Details";
             // 
+            // DriverDet
+            // 
+            this.DriverDet.Location = new System.Drawing.Point(515, 93);
+            this.DriverDet.Multiline = true;
+            this.DriverDet.Name = "DriverDet";
+            this.DriverDet.Size = new System.Drawing.Size(443, 41);
+            this.DriverDet.TabIndex = 5;
+            // 
             // comboBox1
             // 
             this.comboBox1.Font = new System.Drawing.Font("Cambria", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -294,6 +305,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(211, 40);
             this.comboBox1.TabIndex = 4;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // datebut
             // 
@@ -434,6 +446,7 @@
             this.Withdrv.TabIndex = 5;
             this.Withdrv.Text = "Want With Driver";
             this.Withdrv.UseVisualStyleBackColor = true;
+            this.Withdrv.CheckedChanged += new System.EventHandler(this.Withdrv_CheckedChanged);
             // 
             // button1
             // 
@@ -444,6 +457,18 @@
             this.button1.Text = "Check Vehicle Availability ";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label17.Location = new System.Drawing.Point(13, 574);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(0, 37);
+            this.label17.TabIndex = 3;
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label17.Click += new System.EventHandler(this.label17_Click);
             // 
             // groupBox7
             // 
@@ -685,18 +710,6 @@
             this.savebut.UseVisualStyleBackColor = true;
             this.savebut.Click += new System.EventHandler(this.savebut_Click);
             // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label17.Location = new System.Drawing.Point(13, 574);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(0, 37);
-            this.label17.TabIndex = 3;
-            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label17.Click += new System.EventHandler(this.label17_Click);
-            // 
             // Cabbooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -798,5 +811,6 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox DriverDet;
     }
 }

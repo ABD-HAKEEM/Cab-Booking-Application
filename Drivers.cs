@@ -32,6 +32,8 @@ namespace Cab_Booking_Application
             Username = username;
         }
 
+
+        //get the driver details from driver table
         public static List<Drivers> GetDrivers(string registration, SqlConnection conn)
         {
             List<Drivers> driversList = new List<Drivers>();

@@ -112,12 +112,12 @@ namespace Cab_Booking_Application
                     Image image = Image.FromFile(fileName);
                     imageList1.Images.Add(image);
 
-                    // Create a ListViewItem and associate it with the image
+                    
                     ListViewItem item = new ListViewItem
                     {
                         ImageIndex = imageList1.Images.Count - 1,
                         Text = System.IO.Path.GetFileName(fileName),
-                        Tag = image // Store the image in the Tag property for later use
+                        Tag = image 
                     };
 
                     // Add the ListViewItem to the ListView
@@ -127,9 +127,9 @@ namespace Cab_Booking_Application
         }
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Desired width and height (you can set these values as per your requirement)
-            int desiredWidth = 200; // Example width
-            int desiredHeight = 150; // Example height
+            // Desired width and height 
+            int desiredWidth = 200; 
+            int desiredHeight = 150; 
 
             if (listView1.SelectedItems.Count > 0)
             {

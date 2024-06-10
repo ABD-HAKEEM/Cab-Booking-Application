@@ -18,8 +18,9 @@ namespace Cab_Booking_Application
         public string To_Loc { get; set; }
         public int With_Driver { get; set; }
         public string Veh_ID { get; set; }
+        public string DriverID { get; set; }
 
-        public Customer(string id, string cust_Name, string date, string order_Id, float cost, string start_Date, string end_Date, string start_Time, string end_Time, string from_Loc, string to_Loc, int with_Driver, string veh_ID)
+        public Customer(string id, string cust_Name, string date, string order_Id, float cost, string start_Date, string end_Date, string start_Time, string end_Time, string from_Loc, string to_Loc, int with_Driver, string veh_ID, string driverID)
         {
             Id = id;
             Cust_Name = cust_Name;
@@ -35,17 +36,20 @@ namespace Cab_Booking_Application
             With_Driver = with_Driver;
             Veh_ID = veh_ID;
             conn = DBconnection.ConnectToDB();
+            DriverID = driverID;
         }
 
+
+        //Insert Order (Set The Order)
         public void InsertOrder()
         {
 
             using (SqlConnection conn = DBconnection.ConnectToDB())
             {
-                string query = "INSERT INTO Trn_mas (Veh_Id, date, refno, amt, from_Date, to_date, start_time, end_time, from_loc, end_loc, with_drv, Del, Cust_Id, Custo_Name)" +
-                   "VALUES (@Veh_ID, @Date, @Order_Id, @Cost, @Start_Date, @End_Date, @Start_Time, @End_Time, @From_Loc, @To_Loc, @With_Driver, 'N', @ID, @Cust_Name)";
+                string query = "INSERT INTO Trn_mas (Veh_Id, date, refno, amt, from_Date, to_date, start_time, end_time, from_loc, end_loc, with_drv, Del, Cust_Id, Custo_Name,DriverID)" +
+                   "VALUES (@Veh_ID, @Date, @Order_Id, @Cost, @Start_Date, @End_Date, @Start_Time, @End_Time, @From_Loc, @To_Loc, @With_Driver, 'N', @ID, @Cust_Name,@Driver_ID)";
 
-                string insertBooking = "INSERT INTO Cab_booking (VehID, Start_date, Start_time, end_date, End_time, Booking_Id, status) VALUES (@Veh_ID, @Start_Date, @Start_Time, @End_Date, @End_Time, @Order_Id, 0)";
+                string insertBooking = "INSERT INTO Cab_booking (VehID, Start_date, Start_time, end_date, End_time, Booking_Id, status,DrvAvb) VALUES (@Veh_ID, @Start_Date, @Start_Time, @End_Date, @End_Time, @Order_Id, 0,@Driver_ID)";
 
                 using (SqlCommand command = new SqlCommand(query, conn))
                 using (SqlCommand command2 = new SqlCommand(insertBooking, conn))
@@ -63,7 +67,7 @@ namespace Cab_Booking_Application
                     command.Parameters.AddWithValue("@With_Driver", With_Driver);
                     command.Parameters.AddWithValue("@ID", Id);
                     command.Parameters.AddWithValue("@Cust_Name", Cust_Name);
-
+                    command.Parameters.AddWithValue("@Driver_ID", DriverID);
 
 
                     command2.Parameters.AddWithValue("@Veh_ID", Veh_ID);
@@ -72,6 +76,7 @@ namespace Cab_Booking_Application
                     command2.Parameters.AddWithValue("@End_Date", End_Date);
                     command2.Parameters.AddWithValue("@End_Time", End_Time);
                     command2.Parameters.AddWithValue("@Order_Id", Order_Id);
+                    command2.Parameters.AddWithValue("@Driver_ID", DriverID);
 
                     command.ExecuteNonQuery();
                     command2.ExecuteNonQuery();
@@ -83,6 +88,7 @@ namespace Cab_Booking_Application
 
         }
 
+        //Check Car Abvilability
         /*  public void carAvailable(string start_Date, string end_Date, SqlConnection conn)
           {
               string query = @"SELECT VehNo, brand, Model FROM Vehicalmas WHERE VehNo NOT IN  

@@ -86,7 +86,7 @@ namespace Cab_Booking_Application
                         int withDriver;
                         int active;
 
-                        // Safely convert to integers using TryParse
+                     
                         int.TryParse(reader["withdrv"].ToString(), out withDriver);
                         int.TryParse(reader["Inactive"].ToString(), out active);
 
@@ -165,7 +165,7 @@ namespace Cab_Booking_Application
                         int withDriver;
                         int active;
 
-                        // Safely convert to integers using TryParse
+                        // convert to integers using TryParse
                         int.TryParse(reader["withdrv"].ToString(), out withDriver);
                         int.TryParse(reader["Inactive"].ToString(), out active);
 

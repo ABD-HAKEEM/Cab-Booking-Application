@@ -156,11 +156,6 @@ namespace Cab_Booking_Application
         }
 
 
-
-
-
-
-
         private void MDIParent1_Load(object sender, EventArgs e)
         {
             conn = DBconnection.ConnectToDB();
@@ -226,6 +221,7 @@ namespace Cab_Booking_Application
         {
             // Assuming regfrm is a form for registering customers
             regfrm f1 = new regfrm();
+            f1.Text = "Customer Registration";
             f1.MdiParent = this;
             f1.Show();
         }
@@ -346,6 +342,15 @@ namespace Cab_Booking_Application
             f1.MdiParent = this;
             f1.cust_report = "CustomerRpt";
             f1.Text = "Customer Report";
+            f1.Show();
+        }
+
+        private void Driver_Click(object sender, EventArgs e)
+        {
+            Report f1 = new Report();
+            f1.MdiParent = this;
+            f1.Driver_Report = "Driverrpt";
+            f1.Text = "Driver Report";
             f1.Show();
         }
     }

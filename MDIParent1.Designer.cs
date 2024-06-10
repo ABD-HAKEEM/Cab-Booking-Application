@@ -78,7 +78,7 @@
             this.Exit});
             this.File.ImageTransparentColor = System.Drawing.SystemColors.ActiveBorder;
             this.File.Name = "File";
-            this.File.Size = new System.Drawing.Size(79, 38);
+            this.File.Size = new System.Drawing.Size(79, 36);
             this.File.Text = "File";
             this.File.Click += new System.EventHandler(this.fileMenu_Click);
             // 
@@ -145,8 +145,8 @@
             this.Cab_Booking,
             this.Vehicle_Availability});
             this.Transactions.Name = "Transactions";
-            this.Transactions.Size = new System.Drawing.Size(198, 38);
-            this.Transactions.Text = "&Transactions ";
+            this.Transactions.Size = new System.Drawing.Size(198, 36);
+            this.Transactions.Text = "Transactions ";
             // 
             // Cab_Booking
             // 
@@ -171,33 +171,35 @@
             this.Driver,
             this.Vehicles});
             this.Reports.Name = "Reports";
-            this.Reports.Size = new System.Drawing.Size(131, 38);
+            this.Reports.Size = new System.Drawing.Size(131, 36);
             this.Reports.Text = "&Reports";
             // 
             // Booking
             // 
             this.Booking.Name = "Booking";
-            this.Booking.Size = new System.Drawing.Size(359, 44);
+            this.Booking.Size = new System.Drawing.Size(271, 44);
             this.Booking.Text = "Booking ";
             this.Booking.Click += new System.EventHandler(this.Booking_Click);
             // 
             // Customer
             // 
             this.Customer.Name = "Customer";
-            this.Customer.Size = new System.Drawing.Size(359, 44);
+            this.Customer.Size = new System.Drawing.Size(271, 44);
             this.Customer.Text = "Customer";
             this.Customer.Click += new System.EventHandler(this.Customer_Click);
             // 
             // Driver
             // 
             this.Driver.Name = "Driver";
-            this.Driver.Size = new System.Drawing.Size(359, 44);
+            this.Driver.Size = new System.Drawing.Size(271, 44);
             this.Driver.Text = "Driver";
+            this.Driver.Visible = false;
+            this.Driver.Click += new System.EventHandler(this.Driver_Click);
             // 
             // Vehicles
             // 
             this.Vehicles.Name = "Vehicles";
-            this.Vehicles.Size = new System.Drawing.Size(359, 44);
+            this.Vehicles.Size = new System.Drawing.Size(271, 44);
             this.Vehicles.Text = "Vehicles ";
             this.Vehicles.Click += new System.EventHandler(this.vehicalToolStripMenuItem_Click);
             // 
@@ -213,7 +215,7 @@
             this.Change_Font,
             this.Chang_Forms_Color});
             this.Windows.Name = "Windows";
-            this.Windows.Size = new System.Drawing.Size(148, 38);
+            this.Windows.Size = new System.Drawing.Size(148, 36);
             this.Windows.Text = "&Windows";
             // 
             // New_Window
@@ -279,7 +281,7 @@
             this.User_Groups,
             this.Change_Password});
             this.Settings.Name = "Settings";
-            this.Settings.Size = new System.Drawing.Size(132, 38);
+            this.Settings.Size = new System.Drawing.Size(132, 36);
             this.Settings.Text = "Settings";
             // 
             // User_Groups
@@ -311,7 +313,7 @@
             this.menuStrip.MdiWindowListItem = this.Windows;
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Padding = new System.Windows.Forms.Padding(16, 5, 0, 5);
-            this.menuStrip.Size = new System.Drawing.Size(1686, 48);
+            this.menuStrip.Size = new System.Drawing.Size(1686, 46);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "MenuStrip";
             // 

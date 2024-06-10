@@ -175,7 +175,7 @@ namespace Cab_Booking_Application
                     string costString = readerCost["cost"].ToString();
                     string day = readerCost["Days"].ToString();
 
-                    // Check if costString is null or empty 
+                    // Check if costString 
                     int cost = string.IsNullOrEmpty(costString) ? 0 : int.Parse(costString);
 
                     Costingtxt = $" {cost}";
@@ -329,7 +329,8 @@ namespace Cab_Booking_Application
                      from_Loc: locstar.Text,
                      to_Loc: locto.Text,
                      with_Driver: Withdrv.Checked ? 1 : 0,
-                     veh_ID: Vehbox.SelectedItem?.ToString()
+                     veh_ID: Vehbox.SelectedItem?.ToString(),
+                    driverID: comboBox1.Text
                  );
 
 
@@ -371,7 +372,7 @@ namespace Cab_Booking_Application
 
                 Email email = new Email
                 (
-                    id: custId.Text, // Ensure the order of parameters matches the constructor
+                    id: custId.Text, /
                     cust_Name: cusName.Text,
                     date: this.Date.Text,
                     order_Id: Orderid.Text,
@@ -392,6 +393,66 @@ namespace Cab_Booking_Application
             {
                 // Handle any exceptions that occur during email sending process
                 MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Withdrv_CheckedChanged(object sender, EventArgs e)
+        {
+            DateTime startDate, endDate;
+
+            if (DateTime.TryParse(dat1.Text, out startDate) && DateTime.TryParse(dat2.Text, out endDate))
+            {
+
+                string query = "SELECT RegNo FROM Drivers WHERE RegNo NOT IN  (SELECT DISTINCT DrvAvb FROM Cab_booking WHERE Cab_booking.Start_date <= @EndDate AND Cab_booking.end_date >= @StartDate)";
+
+                using (SqlCommand command = new SqlCommand(query, conn))
+                {
+                    command.Parameters.AddWithValue("@StartDate", startDate);
+                    command.Parameters.AddWithValue("@EndDate", endDate);
+
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                string driverRegNo = reader["RegNo"].ToString();
+                                
+                                string driverDisplayText = $" {driverRegNo}";
+                                comboBox1.Items.Add(driverDisplayText);
+                            }
+                            label17.Text = "Check The Available Drivers";
+                        }
+                        else
+                        {
+                            label17.Text = "No Available Drivers on Selected Date";
+                        }
+                    }
+                }
+
+                
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string queryDrivers = "SELECT F_Name, L_Name, telNo FROM Drivers WHERE RegNo=@regno";
+            using (SqlCommand command = new SqlCommand(queryDrivers, conn))
+            {
+                command.Parameters.AddWithValue("@regno", comboBox1.Text);
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        string drivername = reader["F_Name"].ToString().Trim(); 
+                        string driverlname = reader["L_Name"].ToString().Trim(); 
+                        string dritel = reader["telNo"].ToString().Trim(); 
+                        string driverDisplayText = $"{drivername} {driverlname}-{dritel}"; 
+                        DriverDet.Text = driverDisplayText;
+                    }
+                }
             }
         }
 

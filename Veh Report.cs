@@ -187,8 +187,7 @@ namespace Cab_Booking_Application
                         {
                             dataGridView1.Rows.Add(customer.RegNo, customer.FirstName, customer.LastName, customer.Email,
                                 customer.DOB.ToShortDateString(), customer.IdNumber, customer.Address, customer.ContactNumber,customer.Total_Amount);
-                            string formattedTotalAmount = customer.Total_Amount.ToString("0.00");
-
+                               
                         }
                     }
                     else

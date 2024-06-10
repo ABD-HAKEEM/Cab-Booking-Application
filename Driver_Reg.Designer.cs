@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Typ = new System.Windows.Forms.TextBox();
             this.Regbox = new System.Windows.Forms.ComboBox();
             this.Teltxt = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -59,7 +60,7 @@
             this.Clsbtn = new System.Windows.Forms.Button();
             this.Clrbtn = new System.Windows.Forms.Button();
             this.Savebtn = new System.Windows.Forms.Button();
-            this.Typ = new System.Windows.Forms.TextBox();
+            this.delbut = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -95,6 +96,13 @@
             this.groupBox1.TabIndex = 32;
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // Typ
+            // 
+            this.Typ.Location = new System.Drawing.Point(163, 337);
+            this.Typ.Name = "Typ";
+            this.Typ.Size = new System.Drawing.Size(464, 31);
+            this.Typ.TabIndex = 28;
             // 
             // Regbox
             // 
@@ -336,9 +344,9 @@
             // Clsbtn
             // 
             this.Clsbtn.BackColor = System.Drawing.Color.LightCoral;
-            this.Clsbtn.Location = new System.Drawing.Point(475, 780);
+            this.Clsbtn.Location = new System.Drawing.Point(511, 780);
             this.Clsbtn.Name = "Clsbtn";
-            this.Clsbtn.Size = new System.Drawing.Size(160, 46);
+            this.Clsbtn.Size = new System.Drawing.Size(124, 46);
             this.Clsbtn.TabIndex = 36;
             this.Clsbtn.Text = "Close";
             this.Clsbtn.UseVisualStyleBackColor = false;
@@ -347,9 +355,9 @@
             // Clrbtn
             // 
             this.Clrbtn.BackColor = System.Drawing.Color.IndianRed;
-            this.Clrbtn.Location = new System.Drawing.Point(257, 780);
+            this.Clrbtn.Location = new System.Drawing.Point(195, 780);
             this.Clrbtn.Name = "Clrbtn";
-            this.Clrbtn.Size = new System.Drawing.Size(160, 46);
+            this.Clrbtn.Size = new System.Drawing.Size(121, 46);
             this.Clrbtn.TabIndex = 35;
             this.Clrbtn.Text = "Clear";
             this.Clrbtn.UseVisualStyleBackColor = false;
@@ -360,24 +368,29 @@
             this.Savebtn.BackColor = System.Drawing.Color.DarkOrange;
             this.Savebtn.Location = new System.Drawing.Point(34, 780);
             this.Savebtn.Name = "Savebtn";
-            this.Savebtn.Size = new System.Drawing.Size(160, 46);
+            this.Savebtn.Size = new System.Drawing.Size(122, 46);
             this.Savebtn.TabIndex = 34;
             this.Savebtn.Text = "Save";
             this.Savebtn.UseVisualStyleBackColor = false;
             this.Savebtn.Click += new System.EventHandler(this.Savebtn_Click);
             // 
-            // Typ
+            // delbut
             // 
-            this.Typ.Location = new System.Drawing.Point(163, 337);
-            this.Typ.Name = "Typ";
-            this.Typ.Size = new System.Drawing.Size(464, 31);
-            this.Typ.TabIndex = 28;
+            this.delbut.BackColor = System.Drawing.Color.LightCoral;
+            this.delbut.Location = new System.Drawing.Point(352, 780);
+            this.delbut.Name = "delbut";
+            this.delbut.Size = new System.Drawing.Size(124, 46);
+            this.delbut.TabIndex = 37;
+            this.delbut.Text = "Delete";
+            this.delbut.UseVisualStyleBackColor = false;
+            this.delbut.Click += new System.EventHandler(this.delbut_Click);
             // 
             // driver_reg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(661, 855);
+            this.Controls.Add(this.delbut);
             this.Controls.Add(this.Clsbtn);
             this.Controls.Add(this.Clrbtn);
             this.Controls.Add(this.Savebtn);
@@ -427,5 +440,6 @@
         private System.Windows.Forms.Button Savebtn;
         private System.Windows.Forms.ComboBox Regbox;
         private System.Windows.Forms.TextBox Typ;
+        private System.Windows.Forms.Button delbut;
     }
 }

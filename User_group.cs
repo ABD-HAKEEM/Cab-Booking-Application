@@ -84,7 +84,7 @@ namespace Cab_Booking_Application
                 {
                     if (readerpass.HasRows)
                     {
-                        readerpass.Close(); // Close the reader before executing another command
+                       // readerpass.Close(); 
                         string delete = "DELETE FROM user_grp WHERE typ = @type";
                         using (SqlCommand command = new SqlCommand(delete, conn))
                         {
@@ -116,5 +116,43 @@ namespace Cab_Booking_Application
 
         }
 
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            /* {
+                 // Assuming conn is your SqlConnection object
+
+                 string selectQuery = "SELECT * FROM user_grp WHERE typ = @comboBox1";
+
+                 using (SqlCommand command = new SqlCommand(selectQuery, conn))
+                 {
+                     command.Parameters.AddWithValue("@comboBox1", comboBox1.SelectedItem?.ToString());
+
+                     using (SqlDataReader reader = command.ExecuteReader())
+                     {
+                         // Clear the ListBox before populating it with new data
+                         checkedListBox1.Items.Clear();
+
+                         // Check if the reader has rows
+                         if (reader.HasRows)
+                         {
+                             // Loop through each row in the result set
+                             while (reader.Read())
+                             {
+                                 // Access data from each column
+                                 string control = reader["control"].ToString();
+                                 bool status = Convert.ToBoolean(reader["status"]);
+
+                                 // Add the data to the ListBox
+                                 checkedListBox1.Items.Add(control, status);
+                             }
+                         }
+                         else
+                         {
+                             MessageBox.Show("No data found for the selected criteria.");
+                         }
+                     }
+                 }*/
+        }
+        
     }
 }

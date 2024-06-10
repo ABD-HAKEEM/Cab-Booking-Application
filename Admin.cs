@@ -15,13 +15,13 @@ namespace Cab_Booking_Application
             public string DOB { get; set; }
             public string Type { get; set; }
             public string IDNumber { get; set; }
-            public bool TelNumber { get; set; }
+            public string TelNumber { get; set; }
             public string Address { get; set; }
             public string Username { get; set; }
             public string Password { get; set; }
 
 
-            public Admin_Driver(string regNum, string firstName, string lastName, string email, string gender, string dOB, string type, string iDNumber, bool telNumber, string address, string username, string password)
+            public Admin_Driver(string regNum, string firstName, string lastName, string email, string gender, string dOB, string type, string iDNumber, string telNumber, string address, string username, string password)
             {
                 RegNum = regNum;
                 FirstName = firstName;
@@ -34,12 +34,12 @@ namespace Cab_Booking_Application
                 TelNumber = telNumber;
                 Address = address;
                 Username = username;
-                Password = password; // Hash the password before storing
+                Password = password; 
                 SqlConnection conn = DBconnection.ConnectToDB();
             }
 
 
-
+            //Inser Driver to db
             public void InsertDriver()
             {
                 try
@@ -89,7 +89,7 @@ namespace Cab_Booking_Application
         }
 
 
-
+        //Remove Car
         public class Admin_CarRM
         {
             public string VehNo { get; set; }
@@ -120,8 +120,42 @@ namespace Cab_Booking_Application
                     Console.WriteLine(ex.Message);
                 }
             }
+        } 
+
+        //Remove Driver 
+        public class Admin_DrvRM
+        {
+            public string Drvno { get; set; }
+
+            public Admin_DrvRM(string drvno)
+            {
+                Drvno = drvno;
+            }
+
+            public void RmDrv()
+            {
+                try
+                {
+                    using (SqlConnection conn = DBconnection.ConnectToDB())
+                    {
+                        string query = "DELETE FROM Drivers WHERE RegNo = @drvno";
+                        using (SqlCommand command = new SqlCommand(query, conn))
+                        {
+                            command.Parameters.AddWithValue("@drvno", Drvno);
+                            command.ExecuteNonQuery();
+                        }
+                    }
+                    Console.WriteLine("Driver removed successfully.");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("An error occurred while removing Driver:");
+                    Console.WriteLine(ex.Message);
+                }
+            }
         }
 
+       //Add Car
         public class Admin_AddCar
         {
             public string VehNo { get; set; }
