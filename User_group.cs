@@ -84,7 +84,7 @@ namespace Cab_Booking_Application
                 {
                     if (readerpass.HasRows)
                     {
-                       // readerpass.Close(); 
+                        readerpass.Close(); 
                         string delete = "DELETE FROM user_grp WHERE typ = @type";
                         using (SqlCommand command = new SqlCommand(delete, conn))
                         {
